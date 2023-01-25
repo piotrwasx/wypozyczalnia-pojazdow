@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12B14D512981B50200D9672B /* wypozyczalnia_pojazdowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D502981B50200D9672B /* wypozyczalnia_pojazdowApp.swift */; };
+		12B14D532981B50200D9672B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D522981B50200D9672B /* ContentView.swift */; };
+		12B14D552981B50300D9672B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12B14D542981B50300D9672B /* Assets.xcassets */; };
+		12B14D582981B50300D9672B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12B14D572981B50300D9672B /* Preview Assets.xcassets */; };
+		12B14D622981B50300D9672B /* wypozyczalnia_pojazdowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D612981B50300D9672B /* wypozyczalnia_pojazdowTests.swift */; };
+		12B14D6C2981B50300D9672B /* wypozyczalnia_pojazdowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D6B2981B50300D9672B /* wypozyczalnia_pojazdowUITests.swift */; };
+		12B14D6E2981B50300D9672B /* wypozyczalnia_pojazdowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D6D2981B50300D9672B /* wypozyczalnia_pojazdowUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		12B14D5E2981B50300D9672B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 12B14D452981B50200D9672B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12B14D4C2981B50200D9672B;
+			remoteInfo = "wypozyczalnia-pojazdow";
+		};
+		12B14D682981B50300D9672B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 12B14D452981B50200D9672B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12B14D4C2981B50200D9672B;
+			remoteInfo = "wypozyczalnia-pojazdow";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		12B14D4D2981B50200D9672B /* wypozyczalnia-pojazdow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wypozyczalnia-pojazdow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		12B14D502981B50200D9672B /* wypozyczalnia_pojazdowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wypozyczalnia_pojazdowApp.swift; sourceTree = "<group>"; };
+		12B14D522981B50200D9672B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		12B14D542981B50300D9672B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		12B14D572981B50300D9672B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		12B14D5D2981B50300D9672B /* wypozyczalnia-pojazdowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "wypozyczalnia-pojazdowTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		12B14D612981B50300D9672B /* wypozyczalnia_pojazdowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wypozyczalnia_pojazdowTests.swift; sourceTree = "<group>"; };
+		12B14D672981B50300D9672B /* wypozyczalnia-pojazdowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "wypozyczalnia-pojazdowUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		12B14D6B2981B50300D9672B /* wypozyczalnia_pojazdowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wypozyczalnia_pojazdowUITests.swift; sourceTree = "<group>"; };
+		12B14D6D2981B50300D9672B /* wypozyczalnia_pojazdowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wypozyczalnia_pojazdowUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		12B14D4A2981B50200D9672B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12B14D5A2981B50300D9672B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12B14D642981B50300D9672B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12B14D442981B50100D9672B = {
+			isa = PBXGroup;
+			children = (
+				12B14D4F2981B50200D9672B /* wypozyczalnia-pojazdow */,
+				12B14D602981B50300D9672B /* wypozyczalnia-pojazdowTests */,
+				12B14D6A2981B50300D9672B /* wypozyczalnia-pojazdowUITests */,
+				12B14D4E2981B50200D9672B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		12B14D4E2981B50200D9672B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				12B14D4D2981B50200D9672B /* wypozyczalnia-pojazdow.app */,
+				12B14D5D2981B50300D9672B /* wypozyczalnia-pojazdowTests.xctest */,
+				12B14D672981B50300D9672B /* wypozyczalnia-pojazdowUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		12B14D4F2981B50200D9672B /* wypozyczalnia-pojazdow */ = {
+			isa = PBXGroup;
+			children = (
+				12B14D502981B50200D9672B /* wypozyczalnia_pojazdowApp.swift */,
+				12B14D522981B50200D9672B /* ContentView.swift */,
+				12B14D542981B50300D9672B /* Assets.xcassets */,
+				12B14D562981B50300D9672B /* Preview Content */,
+			);
+			path = "wypozyczalnia-pojazdow";
+			sourceTree = "<group>";
+		};
+		12B14D562981B50300D9672B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				12B14D572981B50300D9672B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		12B14D602981B50300D9672B /* wypozyczalnia-pojazdowTests */ = {
+			isa = PBXGroup;
+			children = (
+				12B14D612981B50300D9672B /* wypozyczalnia_pojazdowTests.swift */,
+			);
+			path = "wypozyczalnia-pojazdowTests";
+			sourceTree = "<group>";
+		};
+		12B14D6A2981B50300D9672B /* wypozyczalnia-pojazdowUITests */ = {
+			isa = PBXGroup;
+			children = (
+				12B14D6B2981B50300D9672B /* wypozyczalnia_pojazdowUITests.swift */,
+				12B14D6D2981B50300D9672B /* wypozyczalnia_pojazdowUITestsLaunchTests.swift */,
+			);
+			path = "wypozyczalnia-pojazdowUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		12B14D4C2981B50200D9672B /* wypozyczalnia-pojazdow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12B14D712981B50300D9672B /* Build configuration list for PBXNativeTarget "wypozyczalnia-pojazdow" */;
+			buildPhases = (
+				12B14D492981B50200D9672B /* Sources */,
+				12B14D4A2981B50200D9672B /* Frameworks */,
+				12B14D4B2981B50200D9672B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "wypozyczalnia-pojazdow";
+			productName = "wypozyczalnia-pojazdow";
+			productReference = 12B14D4D2981B50200D9672B /* wypozyczalnia-pojazdow.app */;
+			productType = "com.apple.product-type.application";
+		};
+		12B14D5C2981B50300D9672B /* wypozyczalnia-pojazdowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12B14D742981B50300D9672B /* Build configuration list for PBXNativeTarget "wypozyczalnia-pojazdowTests" */;
+			buildPhases = (
+				12B14D592981B50300D9672B /* Sources */,
+				12B14D5A2981B50300D9672B /* Frameworks */,
+				12B14D5B2981B50300D9672B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12B14D5F2981B50300D9672B /* PBXTargetDependency */,
+			);
+			name = "wypozyczalnia-pojazdowTests";
+			productName = "wypozyczalnia-pojazdowTests";
+			productReference = 12B14D5D2981B50300D9672B /* wypozyczalnia-pojazdowTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		12B14D662981B50300D9672B /* wypozyczalnia-pojazdowUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12B14D772981B50300D9672B /* Build configuration list for PBXNativeTarget "wypozyczalnia-pojazdowUITests" */;
+			buildPhases = (
+				12B14D632981B50300D9672B /* Sources */,
+				12B14D642981B50300D9672B /* Frameworks */,
+				12B14D652981B50300D9672B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12B14D692981B50300D9672B /* PBXTargetDependency */,
+			);
+			name = "wypozyczalnia-pojazdowUITests";
+			productName = "wypozyczalnia-pojazdowUITests";
+			productReference = 12B14D672981B50300D9672B /* wypozyczalnia-pojazdowUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		12B14D452981B50200D9672B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					12B14D4C2981B50200D9672B = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					12B14D5C2981B50300D9672B = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 12B14D4C2981B50200D9672B;
+					};
+					12B14D662981B50300D9672B = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 12B14D4C2981B50200D9672B;
+					};
+				};
+			};
+			buildConfigurationList = 12B14D482981B50200D9672B /* Build configuration list for PBXProject "wypozyczalnia-pojazdow" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 12B14D442981B50100D9672B;
+			productRefGroup = 12B14D4E2981B50200D9672B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				12B14D4C2981B50200D9672B /* wypozyczalnia-pojazdow */,
+				12B14D5C2981B50300D9672B /* wypozyczalnia-pojazdowTests */,
+				12B14D662981B50300D9672B /* wypozyczalnia-pojazdowUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		12B14D4B2981B50200D9672B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12B14D582981B50300D9672B /* Preview Assets.xcassets in Resources */,
+				12B14D552981B50300D9672B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12B14D5B2981B50300D9672B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12B14D652981B50300D9672B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		12B14D492981B50200D9672B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12B14D532981B50200D9672B /* ContentView.swift in Sources */,
+				12B14D512981B50200D9672B /* wypozyczalnia_pojazdowApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12B14D592981B50300D9672B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12B14D622981B50300D9672B /* wypozyczalnia_pojazdowTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12B14D632981B50300D9672B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12B14D6C2981B50300D9672B /* wypozyczalnia_pojazdowUITests.swift in Sources */,
+				12B14D6E2981B50300D9672B /* wypozyczalnia_pojazdowUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		12B14D5F2981B50300D9672B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12B14D4C2981B50200D9672B /* wypozyczalnia-pojazdow */;
+			targetProxy = 12B14D5E2981B50300D9672B /* PBXContainerItemProxy */;
+		};
+		12B14D692981B50300D9672B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12B14D4C2981B50200D9672B /* wypozyczalnia-pojazdow */;
+			targetProxy = 12B14D682981B50300D9672B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		12B14D6F2981B50300D9672B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		12B14D702981B50300D9672B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		12B14D722981B50300D9672B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"wypozyczalnia-pojazdow/Preview Content\"";
+				DEVELOPMENT_TEAM = 43LFV87UXF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wypozyczalnia-pojazdow";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		12B14D732981B50300D9672B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"wypozyczalnia-pojazdow/Preview Content\"";
+				DEVELOPMENT_TEAM = 43LFV87UXF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wypozyczalnia-pojazdow";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		12B14D752981B50300D9672B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 43LFV87UXF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wypozyczalnia-pojazdowTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wypozyczalnia-pojazdow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/wypozyczalnia-pojazdow";
+			};
+			name = Debug;
+		};
+		12B14D762981B50300D9672B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 43LFV87UXF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wypozyczalnia-pojazdowTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wypozyczalnia-pojazdow.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/wypozyczalnia-pojazdow";
+			};
+			name = Release;
+		};
+		12B14D782981B50300D9672B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 43LFV87UXF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wypozyczalnia-pojazdowUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "wypozyczalnia-pojazdow";
+			};
+			name = Debug;
+		};
+		12B14D792981B50300D9672B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 43LFV87UXF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wypozyczalnia-pojazdowUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "wypozyczalnia-pojazdow";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12B14D482981B50200D9672B /* Build configuration list for PBXProject "wypozyczalnia-pojazdow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12B14D6F2981B50300D9672B /* Debug */,
+				12B14D702981B50300D9672B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12B14D712981B50300D9672B /* Build configuration list for PBXNativeTarget "wypozyczalnia-pojazdow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12B14D722981B50300D9672B /* Debug */,
+				12B14D732981B50300D9672B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12B14D742981B50300D9672B /* Build configuration list for PBXNativeTarget "wypozyczalnia-pojazdowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12B14D752981B50300D9672B /* Debug */,
+				12B14D762981B50300D9672B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12B14D772981B50300D9672B /* Build configuration list for PBXNativeTarget "wypozyczalnia-pojazdowUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12B14D782981B50300D9672B /* Debug */,
+				12B14D792981B50300D9672B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 12B14D452981B50200D9672B /* Project object */;
+}
