@@ -47,6 +47,23 @@ struct DetailsView: View {
                 List(viewModel.motorcycleRentHistory, id: \.id) { history in
                     Text(history.rent_start)
                 }
+            case "Utility":
+                List(viewModel.utility, id: \.id) { result in
+                    Text(result.utility_brand)
+                    Text(result.utility_model)
+                    Text(String(result.id))
+                    Text(result.utility_motor)
+                    Text(String(result.utility_rent_price_pln))
+                    Text(result.utility_transmission)
+                    Text(result.utility_type)
+                }
+                Spacer()
+                    .frame(height: 10)
+                Text("Historia wypożyczeń")
+                List(viewModel.utilityRentHistory, id: \.id) { history in
+                    Text(history.rent_start)
+                }
+
             default:
                 Text("cos poszlo nie tak")
             }
@@ -62,6 +79,6 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(vehicle: "Motorcycle", vehicle_id: 2)
+        DetailsView(vehicle: "Utility", vehicle_id: 1)
     }
 }

@@ -25,6 +25,9 @@
 		12B14D972982B3ED00D9672B /* MotorcycleTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D962982B3ED00D9672B /* MotorcycleTitle.swift */; };
 		12B14D9E2982C65E00D9672B /* MotorcycleRent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D9D2982C65E00D9672B /* MotorcycleRent.swift */; };
 		12B14DA02982D37700D9672B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D9F2982D37700D9672B /* ContentView.swift */; };
+		12B14DA6298311E900D9672B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14DA5298311E900D9672B /* Utility.swift */; };
+		12B14DA82983125D00D9672B /* UtilityRent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14DA72983125D00D9672B /* UtilityRent.swift */; };
+		12B14DAA2983126A00D9672B /* UtilityTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14DA92983126A00D9672B /* UtilityTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		12B14D962982B3ED00D9672B /* MotorcycleTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleTitle.swift; sourceTree = "<group>"; };
 		12B14D9D2982C65E00D9672B /* MotorcycleRent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleRent.swift; sourceTree = "<group>"; };
 		12B14D9F2982D37700D9672B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		12B14DA5298311E900D9672B /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		12B14DA72983125D00D9672B /* UtilityRent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityRent.swift; sourceTree = "<group>"; };
+		12B14DA92983126A00D9672B /* UtilityTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +160,7 @@
 		12B14D80298281A100D9672B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				12B14DA32983117A00D9672B /* Utility */,
 				12B14DA22982D39500D9672B /* Motorcycle */,
 				12B14DA12982D38A00D9672B /* Car */,
 			);
@@ -214,6 +221,16 @@
 				12B14D962982B3ED00D9672B /* MotorcycleTitle.swift */,
 			);
 			path = Motorcycle;
+			sourceTree = "<group>";
+		};
+		12B14DA32983117A00D9672B /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				12B14DA5298311E900D9672B /* Utility.swift */,
+				12B14DA72983125D00D9672B /* UtilityRent.swift */,
+				12B14DA92983126A00D9672B /* UtilityTitle.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,12 +363,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12B14DA6298311E900D9672B /* Utility.swift in Sources */,
 				12B14D8E2982A49200D9672B /* DetailsViewModel.swift in Sources */,
 				12B14D972982B3ED00D9672B /* MotorcycleTitle.swift in Sources */,
+				12B14DAA2983126A00D9672B /* UtilityTitle.swift in Sources */,
 				12B14D872982A02100D9672B /* ListViewModel.swift in Sources */,
 				12B14D532981B50200D9672B /* ListView.swift in Sources */,
 				12B14D852982996E00D9672B /* CarRent.swift in Sources */,
 				12B14D9E2982C65E00D9672B /* MotorcycleRent.swift in Sources */,
+				12B14DA82983125D00D9672B /* UtilityRent.swift in Sources */,
 				12B14D902982B2C800D9672B /* Motorcycle.swift in Sources */,
 				12B14D512981B50200D9672B /* wypozyczalnia_pojazdowApp.swift in Sources */,
 				12B14D7F2982809600D9672B /* CarTitle.swift in Sources */,

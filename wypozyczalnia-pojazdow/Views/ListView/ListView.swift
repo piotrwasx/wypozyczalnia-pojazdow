@@ -36,6 +36,14 @@ struct ListView: View {
                         }
                     }
                 }
+            case "Utility":
+                List($viewModel.utilityTitles, id: \.id) { item in
+                    VStack(alignment: .leading) {
+                        NavigationLink(destination: DetailsView(vehicle: "Utility", vehicle_id: item.id.wrappedValue)) {
+                            Text(item.utility_model.wrappedValue)
+                        }
+                    }
+                }
             default:
                 Text("cos poszlo nie tak")
             }

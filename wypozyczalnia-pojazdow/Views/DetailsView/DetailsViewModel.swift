@@ -15,6 +15,9 @@ final class DetailsViewModel: ObservableObject {
     @Published var motorcycle = [Motorcycle]()
     @Published var motorcycleRentHistory = [MotorcycleRent]()
     
+    @Published var utility = [Utility]()
+    @Published var utilityRentHistory = [UtilityRent]()
+    
     func loadInfo(vehicle_id: Int, vehicle: String) {
         switch vehicle {
         case "Car":
@@ -26,6 +29,11 @@ final class DetailsViewModel: ObservableObject {
             NetworkController.fetchData(url: "http://127.0.0.1:5000/api/motorcycles/\(vehicle_id)", dataType: [Motorcycle].self) { response in
                 DispatchQueue.main.async {
                     self.motorcycle = response
+                }}
+        case "Utility":
+            NetworkController.fetchData(url: "http://127.0.0.1:5000/api/utilities/\(vehicle_id)", dataType: [Utility].self) { response in
+                DispatchQueue.main.async {
+                    self.utility = response
                 }}
         default: return
         }
@@ -43,7 +51,11 @@ final class DetailsViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.motorcycleRentHistory = response
                 }}
-
+        case "Utility":
+            NetworkController.fetchData(url: "http://127.0.0.1:5000/api/utilitiesrenting/byUtility?id=\(vehicle_id)", dataType: [UtilityRent].self) { response in
+                DispatchQueue.main.async {
+                    self.utilityRentHistory = response
+                }}
         default: return
         }
     }

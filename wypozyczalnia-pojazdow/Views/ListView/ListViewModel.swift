@@ -11,6 +11,7 @@ final class ListViewModel: ObservableObject {
     
     @Published var carTitles: [CarTitle] = []
     @Published var motorcycleTitles: [MotorcycleTitle] = []
+    @Published var utilityTitles: [UtilityTitle] = []
     
     var vehicle: String
     
@@ -30,6 +31,12 @@ final class ListViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.motorcycleTitles = response
                 }}
+        case "Utility":
+            NetworkController.fetchData(url: "http://127.0.0.1:5000/api/utilities", dataType: [UtilityTitle].self) { response in
+                DispatchQueue.main.async {
+                    self.utilityTitles = response
+                }}
+
         default:
             print("Have you done something new?")
         }

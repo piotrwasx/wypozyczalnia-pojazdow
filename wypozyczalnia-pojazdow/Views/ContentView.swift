@@ -19,6 +19,10 @@ struct ContentView: View {
                 .tabItem {
                     Label("Samochody", systemImage: "car")
                 }
+            ListView(vehicle: "Utility")
+                .tabItem {
+                    Label("Ciężarowe", systemImage: "box.truck")
+                }
         }
     }
 }
