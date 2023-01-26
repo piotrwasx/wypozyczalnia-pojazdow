@@ -8,12 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		12B14D512981B50200D9672B /* wypozyczalnia_pojazdowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D502981B50200D9672B /* wypozyczalnia_pojazdowApp.swift */; };
-		12B14D532981B50200D9672B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D522981B50200D9672B /* ContentView.swift */; };
+		12B14D532981B50200D9672B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D522981B50200D9672B /* ListView.swift */; };
 		12B14D552981B50300D9672B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12B14D542981B50300D9672B /* Assets.xcassets */; };
 		12B14D582981B50300D9672B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12B14D572981B50300D9672B /* Preview Assets.xcassets */; };
 		12B14D622981B50300D9672B /* wypozyczalnia_pojazdowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D612981B50300D9672B /* wypozyczalnia_pojazdowTests.swift */; };
 		12B14D6C2981B50300D9672B /* wypozyczalnia_pojazdowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D6B2981B50300D9672B /* wypozyczalnia_pojazdowUITests.swift */; };
 		12B14D6E2981B50300D9672B /* wypozyczalnia_pojazdowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D6D2981B50300D9672B /* wypozyczalnia_pojazdowUITestsLaunchTests.swift */; };
+		12B14D7B2981B7E000D9672B /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D7A2981B7E000D9672B /* Car.swift */; };
+		12B14D7F2982809600D9672B /* CarTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D7E2982809600D9672B /* CarTitle.swift */; };
+		12B14D832982839200D9672B /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D822982839200D9672B /* DetailsView.swift */; };
+		12B14D852982996E00D9672B /* CarRent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D842982996E00D9672B /* CarRent.swift */; };
+		12B14D872982A02100D9672B /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D862982A02100D9672B /* ListViewModel.swift */; };
+		12B14D8C2982A09F00D9672B /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D8B2982A09F00D9672B /* NetworkController.swift */; };
+		12B14D8E2982A49200D9672B /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D8D2982A49100D9672B /* DetailsViewModel.swift */; };
+		12B14D902982B2C800D9672B /* Motorcycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D8F2982B2C800D9672B /* Motorcycle.swift */; };
+		12B14D972982B3ED00D9672B /* MotorcycleTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D962982B3ED00D9672B /* MotorcycleTitle.swift */; };
+		12B14D9E2982C65E00D9672B /* MotorcycleRent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D9D2982C65E00D9672B /* MotorcycleRent.swift */; };
+		12B14DA02982D37700D9672B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D9F2982D37700D9672B /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +47,7 @@
 /* Begin PBXFileReference section */
 		12B14D4D2981B50200D9672B /* wypozyczalnia-pojazdow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wypozyczalnia-pojazdow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12B14D502981B50200D9672B /* wypozyczalnia_pojazdowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wypozyczalnia_pojazdowApp.swift; sourceTree = "<group>"; };
-		12B14D522981B50200D9672B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		12B14D522981B50200D9672B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		12B14D542981B50300D9672B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12B14D572981B50300D9672B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		12B14D5D2981B50300D9672B /* wypozyczalnia-pojazdowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "wypozyczalnia-pojazdowTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +55,17 @@
 		12B14D672981B50300D9672B /* wypozyczalnia-pojazdowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "wypozyczalnia-pojazdowUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12B14D6B2981B50300D9672B /* wypozyczalnia_pojazdowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wypozyczalnia_pojazdowUITests.swift; sourceTree = "<group>"; };
 		12B14D6D2981B50300D9672B /* wypozyczalnia_pojazdowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wypozyczalnia_pojazdowUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		12B14D7A2981B7E000D9672B /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		12B14D7E2982809600D9672B /* CarTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarTitle.swift; sourceTree = "<group>"; };
+		12B14D822982839200D9672B /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		12B14D842982996E00D9672B /* CarRent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRent.swift; sourceTree = "<group>"; };
+		12B14D862982A02100D9672B /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		12B14D8B2982A09F00D9672B /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		12B14D8D2982A49100D9672B /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		12B14D8F2982B2C800D9672B /* Motorcycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motorcycle.swift; sourceTree = "<group>"; };
+		12B14D962982B3ED00D9672B /* MotorcycleTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleTitle.swift; sourceTree = "<group>"; };
+		12B14D9D2982C65E00D9672B /* MotorcycleRent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleRent.swift; sourceTree = "<group>"; };
+		12B14D9F2982D37700D9672B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +116,10 @@
 		12B14D4F2981B50200D9672B /* wypozyczalnia-pojazdow */ = {
 			isa = PBXGroup;
 			children = (
+				12B14D8A2982A08B00D9672B /* Utilities */,
+				12B14D81298281D900D9672B /* Views */,
+				12B14D80298281A100D9672B /* Models */,
 				12B14D502981B50200D9672B /* wypozyczalnia_pojazdowApp.swift */,
-				12B14D522981B50200D9672B /* ContentView.swift */,
 				12B14D542981B50300D9672B /* Assets.xcassets */,
 				12B14D562981B50300D9672B /* Preview Content */,
 			);
@@ -125,6 +149,71 @@
 				12B14D6D2981B50300D9672B /* wypozyczalnia_pojazdowUITestsLaunchTests.swift */,
 			);
 			path = "wypozyczalnia-pojazdowUITests";
+			sourceTree = "<group>";
+		};
+		12B14D80298281A100D9672B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				12B14DA22982D39500D9672B /* Motorcycle */,
+				12B14DA12982D38A00D9672B /* Car */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		12B14D81298281D900D9672B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				12B14D9F2982D37700D9672B /* ContentView.swift */,
+				12B14D892982A03500D9672B /* DetailsView */,
+				12B14D882982A02900D9672B /* ListView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		12B14D882982A02900D9672B /* ListView */ = {
+			isa = PBXGroup;
+			children = (
+				12B14D522981B50200D9672B /* ListView.swift */,
+				12B14D862982A02100D9672B /* ListViewModel.swift */,
+			);
+			path = ListView;
+			sourceTree = "<group>";
+		};
+		12B14D892982A03500D9672B /* DetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				12B14D8D2982A49100D9672B /* DetailsViewModel.swift */,
+				12B14D822982839200D9672B /* DetailsView.swift */,
+			);
+			path = DetailsView;
+			sourceTree = "<group>";
+		};
+		12B14D8A2982A08B00D9672B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				12B14D8B2982A09F00D9672B /* NetworkController.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		12B14DA12982D38A00D9672B /* Car */ = {
+			isa = PBXGroup;
+			children = (
+				12B14D842982996E00D9672B /* CarRent.swift */,
+				12B14D7A2981B7E000D9672B /* Car.swift */,
+				12B14D7E2982809600D9672B /* CarTitle.swift */,
+			);
+			path = Car;
+			sourceTree = "<group>";
+		};
+		12B14DA22982D39500D9672B /* Motorcycle */ = {
+			isa = PBXGroup;
+			children = (
+				12B14D9D2982C65E00D9672B /* MotorcycleRent.swift */,
+				12B14D8F2982B2C800D9672B /* Motorcycle.swift */,
+				12B14D962982B3ED00D9672B /* MotorcycleTitle.swift */,
+			);
+			path = Motorcycle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +346,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12B14D532981B50200D9672B /* ContentView.swift in Sources */,
+				12B14D8E2982A49200D9672B /* DetailsViewModel.swift in Sources */,
+				12B14D972982B3ED00D9672B /* MotorcycleTitle.swift in Sources */,
+				12B14D872982A02100D9672B /* ListViewModel.swift in Sources */,
+				12B14D532981B50200D9672B /* ListView.swift in Sources */,
+				12B14D852982996E00D9672B /* CarRent.swift in Sources */,
+				12B14D9E2982C65E00D9672B /* MotorcycleRent.swift in Sources */,
+				12B14D902982B2C800D9672B /* Motorcycle.swift in Sources */,
 				12B14D512981B50200D9672B /* wypozyczalnia_pojazdowApp.swift in Sources */,
+				12B14D7F2982809600D9672B /* CarTitle.swift in Sources */,
+				12B14D7B2981B7E000D9672B /* Car.swift in Sources */,
+				12B14DA02982D37700D9672B /* ContentView.swift in Sources */,
+				12B14D832982839200D9672B /* DetailsView.swift in Sources */,
+				12B14D8C2982A09F00D9672B /* NetworkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
