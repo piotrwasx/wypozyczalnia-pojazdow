@@ -10,18 +10,21 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            ListView(vehicle: "Motorcycle")
+            ListView(dataType: "Motorcycle")
                 .tabItem {
                     Label("Motocykle", systemImage: "bicycle")
-                    
                 }
-            ListView(vehicle: "Car")
+            ListView(dataType: "Car")
                 .tabItem {
                     Label("Samochody", systemImage: "car")
                 }
-            ListView(vehicle: "Utility")
+            ListView(dataType: "Utility")
                 .tabItem {
                     Label("Ciężarowe", systemImage: "box.truck")
+                }
+            ListView(dataType: "Client")
+                .tabItem {
+                    Label("Klienci", systemImage: "person")
                 }
         }
     }

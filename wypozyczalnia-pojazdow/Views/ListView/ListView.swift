@@ -9,21 +9,21 @@ import SwiftUI
 
 struct ListView: View {
     
-    @State var vehicle: String
+    @State var dataType: String
     @ObservedObject var viewModel: ListViewModel
 
-    init(vehicle: String) {
-        self.vehicle = vehicle
-        self.viewModel = ListViewModel(vehicle: vehicle)
+    init(dataType: String) {
+        self.dataType = dataType
+        self.viewModel = ListViewModel(dataType: dataType)
     }
     
     var body: some View {
         NavigationView {
-            switch vehicle {
+            switch dataType {
             case "Car":
                 List($viewModel.carTitles, id: \.id) { item in
                     VStack(alignment: .leading) {
-                        NavigationLink(destination: DetailsView(vehicle: "Car", vehicle_id: item.id.wrappedValue)) {
+                        NavigationLink(destination: DetailsView(dataType: "Car", id: item.id.wrappedValue)) {
                             Text(item.car_model.wrappedValue)
                         }
                     }
@@ -31,7 +31,7 @@ struct ListView: View {
             case "Motorcycle":
                 List($viewModel.motorcycleTitles, id: \.id) { item in
                     VStack(alignment: .leading) {
-                        NavigationLink(destination: DetailsView(vehicle: "Motorcycle", vehicle_id: item.id.wrappedValue)) {
+                        NavigationLink(destination: DetailsView(dataType: "Motorcycle", id: item.id.wrappedValue)) {
                             Text(item.motorcycle_model.wrappedValue)
                         }
                     }
@@ -39,8 +39,16 @@ struct ListView: View {
             case "Utility":
                 List($viewModel.utilityTitles, id: \.id) { item in
                     VStack(alignment: .leading) {
-                        NavigationLink(destination: DetailsView(vehicle: "Utility", vehicle_id: item.id.wrappedValue)) {
+                        NavigationLink(destination: DetailsView(dataType: "Utility", id: item.id.wrappedValue)) {
                             Text(item.utility_model.wrappedValue)
+                        }
+                    }
+                }
+            case "Client":
+                List($viewModel.clientTitles, id: \.id) { item in
+                    VStack(alignment: .leading) {
+                        NavigationLink(destination: DetailsView(dataType: "Client", id: item.id.wrappedValue)) {
+                            Text(item.client_surname.wrappedValue)
                         }
                     }
                 }
@@ -56,6 +64,6 @@ struct ListView: View {
 
 struct CarsListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView(vehicle: "Motorcycle")
+        ListView(dataType: "CLient")
     }
 }

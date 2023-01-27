@@ -12,15 +12,16 @@ final class ListViewModel: ObservableObject {
     @Published var carTitles: [CarTitle] = []
     @Published var motorcycleTitles: [MotorcycleTitle] = []
     @Published var utilityTitles: [UtilityTitle] = []
+    @Published var clientTitles: [ClientTitle] = []
     
-    var vehicle: String
+    var dataType: String
     
-    init(vehicle: String) {
-        self.vehicle = vehicle
+    init(dataType: String) {
+        self.dataType = dataType
     }
     
     func loadData() {
-        switch vehicle {
+        switch dataType {
         case "Car":
             NetworkController.fetchData(url: "http://127.0.0.1:5000/api/cars", dataType: [CarTitle].self) { response in
                 DispatchQueue.main.async {
@@ -36,7 +37,11 @@ final class ListViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.utilityTitles = response
                 }}
-
+        case "Client":
+            NetworkController.fetchData(url: "http://127.0.0.1:5000/api/clients", dataType: [ClientTitle].self) { response in
+                DispatchQueue.main.async {
+                    self.clientTitles = response
+                }}
         default:
             print("Have you done something new?")
         }

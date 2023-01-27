@@ -10,12 +10,12 @@ import SwiftUI
 struct DetailsView: View {
     
     @StateObject var viewModel = DetailsViewModel()
-    let vehicle: String
-    let vehicle_id: Int
+    let dataType: String
+    let id: Int
     
     var body: some View {
         VStack {
-            switch vehicle {
+            switch dataType {
             case "Car":
                 List(viewModel.car, id: \.id) { result in
                     Text(result.car_brand)
@@ -63,15 +63,31 @@ struct DetailsView: View {
                 List(viewModel.utilityRentHistory, id: \.id) { history in
                     Text(history.rent_start)
                 }
-
+            case "Client":
+                List(viewModel.client, id: \.id) { result in
+                    Text(result.client_name)
+                    Text(result.client_surname)
+                    Text("id klinenta: \(result.id)")
+                    Text(result.client_email ?? "brak e-maila")
+                    Text(result.client_address)
+                    Text(result.client_city)
+                    Text("\(result.client_phone_nr)")
+                    Text("Prawo jazdy od: \(result.client_driving_license_since)")
+                }
+                Spacer()
+                    .frame(height: 10)
+                Text("Historia wypożyczeń")
+                List(viewModel.clientRentHistory, id: \.id) { history in
+                    Text("\(history.car_model) - koszt: \(history.total_price_with_insurance)")
+                }
             default:
                 Text("cos poszlo nie tak")
             }
             
         }
         .onAppear{
-            viewModel.loadInfo(vehicle_id: vehicle_id, vehicle: vehicle)
-            viewModel.loadRentHistory(vehicle_id: vehicle_id, vehicle: vehicle)
+            viewModel.loadInfo(id: id, dataType: dataType)
+            viewModel.loadRentHistory(id: id, dataType: dataType)
         }
     }
     
@@ -79,6 +95,6 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(vehicle: "Utility", vehicle_id: 1)
+        DetailsView(dataType: "Client", id: 1)
     }
 }
