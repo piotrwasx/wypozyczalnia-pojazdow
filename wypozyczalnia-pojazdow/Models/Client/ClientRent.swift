@@ -13,7 +13,8 @@ struct ClientRent: Codable {
     var car_brand, car_model: String
     var car_rent_price_pln: Int
     var rent_start, rent_end: String
-    var total_cost, rent_insurance: Int
+    var total_cost: Int
+    var rent_insurance: Bool
     var days_rented, total_price_with_insurance: Int
     var vehicle: String
     
@@ -29,7 +30,7 @@ struct ClientRent: Codable {
         self.car_rent_price_pln = 0
         self.rent_start = ""
         self.rent_end = ""
-        self.rent_insurance = 0
+        self.rent_insurance = false
         self.days_rented = 0
         self.total_cost = 0
         self.total_price_with_insurance = 0

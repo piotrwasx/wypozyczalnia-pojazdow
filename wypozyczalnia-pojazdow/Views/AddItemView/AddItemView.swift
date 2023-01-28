@@ -11,19 +11,31 @@ struct AddItemView: View {
     
     @State var client = Client()
     @State private var selectedDate = Date()
+    @State private var email: String = ""
+    
+    @StateObject private var viewModel = AddItemViewModel()
     
     var body: some View {
         VStack {
-            Text("Client Details")
+            Text("Dodaj nowego klienta")
                 .font(.title)
+            Group {
+                TextField("Imię *", text: $client.client_name)
+                TextField("Nazwisko *", text: $client.client_surname)
+                TextField("Adres *", text: $client.client_address)
+                TextField("Miasto *", text: $client.client_city)
+                TextField("Numer telefonu *", text: $client.client_phone_nr)
+                TextField("e-mail", text: $email)
+                DatePicker("Data wydania prawa jazdy:", selection: $selectedDate, displayedComponents: .date)
+            }
             
-            TextField("Name", text: $client.client_name)
-            TextField("Surname", text: $client.client_surname)
-            TextField("Address", text: $client.client_address)
-            TextField("City", text: $client.client_city)
-            DatePicker("Please enter a date", selection: $selectedDate, displayedComponents: .date)
-            Text("Selected date: \(selectedDate, formatter: dateFormatter)")
-            
+            Button("Zatwierdź dane") {
+                client.client_email = email
+                client.client_driving_license_since = dateFormatter.string(from: $selectedDate.wrappedValue)
+                Task {
+                    await viewModel.postNewClient(client: $client.wrappedValue)
+                }
+            }
         }
     }
     
