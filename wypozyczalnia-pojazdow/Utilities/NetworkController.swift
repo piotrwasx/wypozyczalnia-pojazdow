@@ -23,24 +23,23 @@ struct NetworkController {
         }
     }
     
-    static func sendData<T: Codable>(url: String, dataToSend: T) async {
+    static func sendData<T: Codable>(url: String, dataToSend: T) async -> String {
         if let url = URL(string: url) {
             guard let encoded = try? JSONEncoder().encode(dataToSend) else {
-                print("Failed to encode data")
-                return
+                return "Wprowadzono niepoprawne dane"
             }
-
             var request = URLRequest(url: url)
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpMethod = "POST"
 
             do {
-                try await URLSession.shared.upload(for: request, from: encoded)
-                print("done.")
+                _ = try await URLSession.shared.upload(for: request, from: encoded)
+                return "Formularz został wysłany"
             } catch {
-                print("Checkout failed.")
+                return "Niepowodzenie"
             }
         }
+        return "Wystąpił błąd połączenia"
     }
         
 }

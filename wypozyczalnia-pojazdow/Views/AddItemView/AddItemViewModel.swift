@@ -8,9 +8,11 @@
 import Foundation
 
 final class AddItemViewModel: ObservableObject {
-    let url = "http://127.0.0.1:5000/api/clients/"
-    
-    func postNewClient(client: Client) async {
-        await NetworkController.sendData(url: url, dataToSend: client)
-    }
+//    
+//    let url = "http://127.0.0.1:5000/api/clients/"
+//    
+//    func postNewClient(client: Client) async {
+//        await NetworkController.sendData(url: url, dataToSend: client)
+//    }
+
 }

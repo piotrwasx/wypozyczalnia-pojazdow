@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ListView: View {
     
-    @State var dataType: String
+    @State var dataType: DataTypes
     @ObservedObject var viewModel: ListViewModel
 
-    init(dataType: String) {
+    init(dataType: DataTypes) {
         self.dataType = dataType
         self.viewModel = ListViewModel(dataType: dataType)
     }
@@ -20,47 +20,45 @@ struct ListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink {
-                    AddItemView()
-                } label: {
-                    Text("x")
+                NavigationLink(destination: AddItemView(dataType: dataType)) {
+                    Label("", systemImage: "plus")
                 }
+                .frame(height: 30)
+                .frame(maxWidth: UIScreen.main.bounds.width - 40, alignment: .trailing)
                 
                 switch dataType {
-                case "Car":
+                case .car:
                     List($viewModel.carTitles, id: \.id) { item in
                         VStack(alignment: .leading) {
-                            NavigationLink(destination: DetailsView(dataType: "Car", id: item.id.wrappedValue)) {
+                            NavigationLink(destination: DetailsView(dataType: .car, id: item.id.wrappedValue)) {
                                 Text(item.car_model.wrappedValue)
                             }
                         }
                     }
-                case "Motorcycle":
+                case .motorcycle:
                     List($viewModel.motorcycleTitles, id: \.id) { item in
                         VStack(alignment: .leading) {
-                            NavigationLink(destination: DetailsView(dataType: "Motorcycle", id: item.id.wrappedValue)) {
+                            NavigationLink(destination: DetailsView(dataType: .motorcycle, id: item.id.wrappedValue)) {
                                 Text(item.motorcycle_model.wrappedValue)
                             }
                         }
                     }
-                case "Utility":
+                case .utility:
                     List($viewModel.utilityTitles, id: \.id) { item in
                         VStack(alignment: .leading) {
-                            NavigationLink(destination: DetailsView(dataType: "Utility", id: item.id.wrappedValue)) {
+                            NavigationLink(destination: DetailsView(dataType: .utility, id: item.id.wrappedValue)) {
                                 Text(item.utility_model.wrappedValue)
                             }
                         }
                     }
-                case "Client":
+                case .client:
                     List($viewModel.clientTitles, id: \.id) { item in
                         VStack(alignment: .leading) {
-                            NavigationLink(destination: DetailsView(dataType: "Client", id: item.id.wrappedValue)) {
+                            NavigationLink(destination: DetailsView(dataType: .client, id: item.id.wrappedValue)) {
                                 Text(item.client_surname.wrappedValue)
                             }
                         }
                     }
-                default:
-                    Text("cos poszlo nie tak")
                 }
             }
         }
@@ -71,6 +69,6 @@ struct ListView: View {
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView(dataType: "Client")
+        ListView(dataType: .client)
     }
 }

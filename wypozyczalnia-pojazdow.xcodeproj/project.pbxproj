@@ -12,6 +12,12 @@
 		127EDA4329844FAF003CC73F /* ClientRent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA4229844FAF003CC73F /* ClientRent.swift */; };
 		127EDA4629847635003CC73F /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA4529847635003CC73F /* AddItemView.swift */; };
 		127EDA482985400B003CC73F /* AddItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA472985400B003CC73F /* AddItemViewModel.swift */; };
+		127EDA4A298574B8003CC73F /* DataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA49298574B8003CC73F /* DataTypes.swift */; };
+		127EDA4C2985B22F003CC73F /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA4B2985B22F003CC73F /* DateFormatter.swift */; };
+		127EDA4E2985B347003CC73F /* ClientFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA4D2985B347003CC73F /* ClientFormView.swift */; };
+		127EDA512985B5B0003CC73F /* CarFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA502985B5B0003CC73F /* CarFormView.swift */; };
+		127EDA552985B957003CC73F /* MotorcycleFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA542985B957003CC73F /* MotorcycleFormView.swift */; };
+		127EDA572985B9D2003CC73F /* UtilityFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA562985B9D2003CC73F /* UtilityFormView.swift */; };
 		12B14D512981B50200D9672B /* wypozyczalnia_pojazdowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D502981B50200D9672B /* wypozyczalnia_pojazdowApp.swift */; };
 		12B14D532981B50200D9672B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D522981B50200D9672B /* ListView.swift */; };
 		12B14D552981B50300D9672B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12B14D542981B50300D9672B /* Assets.xcassets */; };
@@ -58,6 +64,12 @@
 		127EDA4229844FAF003CC73F /* ClientRent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRent.swift; sourceTree = "<group>"; };
 		127EDA4529847635003CC73F /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		127EDA472985400B003CC73F /* AddItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewModel.swift; sourceTree = "<group>"; };
+		127EDA49298574B8003CC73F /* DataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypes.swift; sourceTree = "<group>"; };
+		127EDA4B2985B22F003CC73F /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		127EDA4D2985B347003CC73F /* ClientFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientFormView.swift; sourceTree = "<group>"; };
+		127EDA502985B5B0003CC73F /* CarFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarFormView.swift; sourceTree = "<group>"; };
+		127EDA542985B957003CC73F /* MotorcycleFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleFormView.swift; sourceTree = "<group>"; };
+		127EDA562985B9D2003CC73F /* UtilityFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityFormView.swift; sourceTree = "<group>"; };
 		12B14D4D2981B50200D9672B /* wypozyczalnia-pojazdow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wypozyczalnia-pojazdow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12B14D502981B50200D9672B /* wypozyczalnia_pojazdowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wypozyczalnia_pojazdowApp.swift; sourceTree = "<group>"; };
 		12B14D522981B50200D9672B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -126,6 +138,17 @@
 				127EDA472985400B003CC73F /* AddItemViewModel.swift */,
 			);
 			path = AddItemView;
+			sourceTree = "<group>";
+		};
+		127EDA4F2985B58B003CC73F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				127EDA4D2985B347003CC73F /* ClientFormView.swift */,
+				127EDA502985B5B0003CC73F /* CarFormView.swift */,
+				127EDA542985B957003CC73F /* MotorcycleFormView.swift */,
+				127EDA562985B9D2003CC73F /* UtilityFormView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		12B14D442981B50100D9672B = {
@@ -200,8 +223,9 @@
 		12B14D81298281D900D9672B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				127EDA4429847617003CC73F /* AddItemView */,
 				12B14D9F2982D37700D9672B /* ContentView.swift */,
+				127EDA4F2985B58B003CC73F /* Components */,
+				127EDA4429847617003CC73F /* AddItemView */,
 				12B14D892982A03500D9672B /* DetailsView */,
 				12B14D882982A02900D9672B /* ListView */,
 			);
@@ -229,6 +253,8 @@
 		12B14D8A2982A08B00D9672B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				127EDA4B2985B22F003CC73F /* DateFormatter.swift */,
+				127EDA49298574B8003CC73F /* DataTypes.swift */,
 				12B14D8B2982A09F00D9672B /* NetworkController.swift */,
 			);
 			path = Utilities;
@@ -398,9 +424,12 @@
 				127EDA4329844FAF003CC73F /* ClientRent.swift in Sources */,
 				127EDA4129842386003CC73F /* ClientTitle.swift in Sources */,
 				12B14D8E2982A49200D9672B /* DetailsViewModel.swift in Sources */,
+				127EDA552985B957003CC73F /* MotorcycleFormView.swift in Sources */,
+				127EDA512985B5B0003CC73F /* CarFormView.swift in Sources */,
 				127EDA482985400B003CC73F /* AddItemViewModel.swift in Sources */,
 				12B14D972982B3ED00D9672B /* MotorcycleTitle.swift in Sources */,
 				12B14DAA2983126A00D9672B /* UtilityTitle.swift in Sources */,
+				127EDA4C2985B22F003CC73F /* DateFormatter.swift in Sources */,
 				12B14D872982A02100D9672B /* ListViewModel.swift in Sources */,
 				12B14D532981B50200D9672B /* ListView.swift in Sources */,
 				12B14D852982996E00D9672B /* CarRent.swift in Sources */,
@@ -413,8 +442,11 @@
 				12B14D7B2981B7E000D9672B /* Car.swift in Sources */,
 				12B14DA02982D37700D9672B /* ContentView.swift in Sources */,
 				12B14D832982839200D9672B /* DetailsView.swift in Sources */,
+				127EDA572985B9D2003CC73F /* UtilityFormView.swift in Sources */,
 				12B14D8C2982A09F00D9672B /* NetworkController.swift in Sources */,
+				127EDA4E2985B347003CC73F /* ClientFormView.swift in Sources */,
 				127EDA4629847635003CC73F /* AddItemView.swift in Sources */,
+				127EDA4A298574B8003CC73F /* DataTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

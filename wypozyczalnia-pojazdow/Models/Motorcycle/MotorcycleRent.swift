@@ -10,7 +10,7 @@ import Foundation
 struct MotorcycleRent: Codable {
     var id, client_id, motorcycle_id: Int
     var rent_start, rent_end: String
-    var rent_insurance: Int
+    var rent_insurance: Bool
     
     init() {
         self.id = 0
@@ -18,6 +18,6 @@ struct MotorcycleRent: Codable {
         self.motorcycle_id = 0
         self.rent_start = ""
         self.rent_end = ""
-        self.rent_insurance = 0
+        self.rent_insurance = false
     }
 }

@@ -10,13 +10,13 @@ import SwiftUI
 struct DetailsView: View {
     
     @StateObject var viewModel = DetailsViewModel()
-    let dataType: String
+    let dataType: DataTypes
     let id: Int
     
     var body: some View {
         VStack {
             switch dataType {
-            case "Car":
+            case .car:
                 List(viewModel.car, id: \.id) { result in
                     Text(result.car_brand)
                     Text(result.car_model)
@@ -32,7 +32,7 @@ struct DetailsView: View {
                 List(viewModel.carRentHistory, id: \.id) { history in
                     Text(history.rent_start)
                 }
-            case "Motorcycle":
+            case .motorcycle:
                 List(viewModel.motorcycle, id: \.id) { result in
                     Text(result.motorcycle_brand)
                     Text(result.motorcycle_model)
@@ -47,7 +47,7 @@ struct DetailsView: View {
                 List(viewModel.motorcycleRentHistory, id: \.id) { history in
                     Text(history.rent_start)
                 }
-            case "Utility":
+            case .utility:
                 List(viewModel.utility, id: \.id) { result in
                     Text(result.utility_brand)
                     Text(result.utility_model)
@@ -63,7 +63,7 @@ struct DetailsView: View {
                 List(viewModel.utilityRentHistory, id: \.id) { history in
                     Text(history.rent_start)
                 }
-            case "Client":
+            case .client:
                 List(viewModel.client, id: \.id) { result in
                     Text(result.client_name)
                     Text(result.client_surname)
@@ -80,12 +80,9 @@ struct DetailsView: View {
                 List(viewModel.clientRentHistory, id: \.id) { history in
                     Text("\(history.car_model) - koszt: \(history.total_price_with_insurance)")
                 }
-            default:
-                Text("cos poszlo nie tak")
             }
-            
         }
-        .onAppear{
+        .onAppear {
             viewModel.loadInfo(id: id, dataType: dataType)
             viewModel.loadRentHistory(id: id, dataType: dataType)
         }
@@ -95,6 +92,6 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(dataType: "Client", id: 1)
+        DetailsView(dataType: .car, id: 2)
     }
 }
