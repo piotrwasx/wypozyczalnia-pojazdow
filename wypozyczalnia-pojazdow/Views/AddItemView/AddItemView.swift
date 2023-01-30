@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddItemView: View {
     
-    let dataType: DataTypes
+    let dataType: DataTypes = .car
     
     @State private var showingConfirmation = false
     @State private var confirmationMessage = ""
@@ -37,6 +37,6 @@ struct AddItemView: View {
 
 struct AddItemView_Previews: PreviewProvider {
     static var previews: some View {
-        AddItemView(dataType: .client)
+        AddItemView()
     }
 }

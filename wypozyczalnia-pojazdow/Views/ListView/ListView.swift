@@ -7,68 +7,40 @@
 
 import SwiftUI
 
+protocol ListViewRow {
+    var id: Int { get }
+    var title: String { get }
+    var dataType: DataTypes { get }
+}
+
 struct ListView: View {
     
-    @State var dataType: DataTypes
-    @ObservedObject var viewModel: ListViewModel
-
-    init(dataType: DataTypes) {
-        self.dataType = dataType
-        self.viewModel = ListViewModel(dataType: dataType)
-    }
+    @Binding var rows: [DataListViewRow]
     
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: AddItemView(dataType: dataType)) {
+                NavigationLink(destination: AddItemView()) {
                     Label("", systemImage: "plus")
                 }
-                .frame(height: 30)
-                .frame(maxWidth: UIScreen.main.bounds.width - 40, alignment: .trailing)
+                    .frame(height: 30)
+                    .frame(maxWidth: UIScreen.main.bounds.width - 40, alignment: .trailing)
                 
-                switch dataType {
-                case .car:
-                    List($viewModel.carTitles, id: \.id) { item in
-                        VStack(alignment: .leading) {
-                            NavigationLink(destination: DetailsView(dataType: .car, id: item.id.wrappedValue)) {
-                                Text(item.car_model.wrappedValue)
-                            }
-                        }
-                    }
-                case .motorcycle:
-                    List($viewModel.motorcycleTitles, id: \.id) { item in
-                        VStack(alignment: .leading) {
-                            NavigationLink(destination: DetailsView(dataType: .motorcycle, id: item.id.wrappedValue)) {
-                                Text(item.motorcycle_model.wrappedValue)
-                            }
-                        }
-                    }
-                case .utility:
-                    List($viewModel.utilityTitles, id: \.id) { item in
-                        VStack(alignment: .leading) {
-                            NavigationLink(destination: DetailsView(dataType: .utility, id: item.id.wrappedValue)) {
-                                Text(item.utility_model.wrappedValue)
-                            }
-                        }
-                    }
-                case .client:
-                    List($viewModel.clientTitles, id: \.id) { item in
-                        VStack(alignment: .leading) {
-                            NavigationLink(destination: DetailsView(dataType: .client, id: item.id.wrappedValue)) {
-                                Text(item.client_surname.wrappedValue)
-                            }
+                List(rows, id: \.id) { item in
+                    VStack(alignment: .leading) {
+                        NavigationLink(destination: DetailsView(dataType: item.dataType, id: item.id)) {
+                            Text(item.title)
                         }
                     }
                 }
             }
         }
-        .onAppear(perform: viewModel.loadData)
     }
 
 }
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView(dataType: .client)
+        ListView(rows: .constant([]))
     }
 }
