@@ -21,6 +21,11 @@
 		127EDA612988525D003CC73F /* String+isValidEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA602988525D003CC73F /* String+isValidEmail.swift */; };
 		127EDA7129892F89003CC73F /* OperatorOverload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA7029892F89003CC73F /* OperatorOverload.swift */; };
 		127EDA73298963DB003CC73F /* RentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA72298963DB003CC73F /* RentedView.swift */; };
+		127EDA762989A67A003CC73F /* CarForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA752989A679003CC73F /* CarForm.swift */; };
+		127EDA782989AC2B003CC73F /* MotorcycleForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA772989AC2A003CC73F /* MotorcycleForm.swift */; };
+		127EDA7A2989AEB5003CC73F /* UtilityForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA792989AEB4003CC73F /* UtilityForm.swift */; };
+		127EDA7C2989AF92003CC73F /* ClientForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA7B2989AF92003CC73F /* ClientForm.swift */; };
+		127EDA7E2989B585003CC73F /* String+Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA7D2989B585003CC73F /* String+Split.swift */; };
 		12B14D512981B50200D9672B /* wypozyczalnia_pojazdowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D502981B50200D9672B /* wypozyczalnia_pojazdowApp.swift */; };
 		12B14D532981B50200D9672B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D522981B50200D9672B /* ListView.swift */; };
 		12B14D552981B50300D9672B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12B14D542981B50300D9672B /* Assets.xcassets */; };
@@ -76,6 +81,11 @@
 		127EDA602988525D003CC73F /* String+isValidEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isValidEmail.swift"; sourceTree = "<group>"; };
 		127EDA7029892F89003CC73F /* OperatorOverload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorOverload.swift; sourceTree = "<group>"; };
 		127EDA72298963DB003CC73F /* RentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentedView.swift; sourceTree = "<group>"; };
+		127EDA752989A679003CC73F /* CarForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarForm.swift; sourceTree = "<group>"; };
+		127EDA772989AC2A003CC73F /* MotorcycleForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotorcycleForm.swift; sourceTree = "<group>"; };
+		127EDA792989AEB4003CC73F /* UtilityForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityForm.swift; sourceTree = "<group>"; };
+		127EDA7B2989AF92003CC73F /* ClientForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientForm.swift; sourceTree = "<group>"; };
+		127EDA7D2989B585003CC73F /* String+Split.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Split.swift"; sourceTree = "<group>"; };
 		12B14D4D2981B50200D9672B /* wypozyczalnia-pojazdow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wypozyczalnia-pojazdow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12B14D502981B50200D9672B /* wypozyczalnia_pojazdowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wypozyczalnia_pojazdowApp.swift; sourceTree = "<group>"; };
 		12B14D522981B50200D9672B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -160,6 +170,7 @@
 			children = (
 				127EDA5E298850FE003CC73F /* String+isNumber.swift */,
 				127EDA602988525D003CC73F /* String+isValidEmail.swift */,
+				127EDA7D2989B585003CC73F /* String+Split.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -269,6 +280,10 @@
 			children = (
 				12B14D8D2982A49100D9672B /* DetailsViewModel.swift */,
 				12B14D822982839200D9672B /* DetailsView.swift */,
+				127EDA7B2989AF92003CC73F /* ClientForm.swift */,
+				127EDA752989A679003CC73F /* CarForm.swift */,
+				127EDA772989AC2A003CC73F /* MotorcycleForm.swift */,
+				127EDA792989AEB4003CC73F /* UtilityForm.swift */,
 			);
 			path = DetailsView;
 			sourceTree = "<group>";
@@ -445,10 +460,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				127EDA7C2989AF92003CC73F /* ClientForm.swift in Sources */,
 				12B14DA6298311E900D9672B /* Utility.swift in Sources */,
 				127EDA4329844FAF003CC73F /* ClientRent.swift in Sources */,
 				127EDA4129842386003CC73F /* ClientTitle.swift in Sources */,
 				12B14D8E2982A49200D9672B /* DetailsViewModel.swift in Sources */,
+				127EDA782989AC2B003CC73F /* MotorcycleForm.swift in Sources */,
+				127EDA7A2989AEB5003CC73F /* UtilityForm.swift in Sources */,
 				127EDA512985B5B0003CC73F /* VehicleFormView.swift in Sources */,
 				127EDA482985400B003CC73F /* AddItemViewModel.swift in Sources */,
 				12B14D972982B3ED00D9672B /* MotorcycleTitle.swift in Sources */,
@@ -466,7 +484,9 @@
 				12B14D902982B2C800D9672B /* Motorcycle.swift in Sources */,
 				12B14D512981B50200D9672B /* wypozyczalnia_pojazdowApp.swift in Sources */,
 				12B14D7F2982809600D9672B /* CarTitle.swift in Sources */,
+				127EDA762989A67A003CC73F /* CarForm.swift in Sources */,
 				12B14D7B2981B7E000D9672B /* Car.swift in Sources */,
+				127EDA7E2989B585003CC73F /* String+Split.swift in Sources */,
 				12B14DA02982D37700D9672B /* ContentView.swift in Sources */,
 				12B14D832982839200D9672B /* DetailsView.swift in Sources */,
 				127EDA612988525D003CC73F /* String+isValidEmail.swift in Sources */,

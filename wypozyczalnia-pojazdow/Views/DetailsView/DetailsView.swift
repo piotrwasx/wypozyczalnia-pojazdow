@@ -21,108 +21,105 @@ struct DetailsView: View {
         VStack {
             switch dataType {
             case .car:
-                ForEach($viewModel.car, id: \.id) { result in
-                    Button("Zapisz") {
-                        if viewModel.update(car: result.wrappedValue) {
-                            confirmationMessage = "Zaktualizowano dane"
-                            showingConfirmation = true
-                        } else {
-                            confirmationMessage = "Niepowodzenie"
-                            showingConfirmation = true
+                Form {
+                    ForEach($viewModel.car, id: \.id) { result in
+                        CarForm(car: result.wrappedValue, confirmationMessage: $confirmationMessage, showingConfirmation: $showingConfirmation)
+                        Section {
+                            Button("Zapisz zmiany") {
+                                if viewModel.update(car: result.wrappedValue) {
+                                    confirmationMessage = "Zaktualizowano dane"
+                                    showingConfirmation = true
+                                } else {
+                                    confirmationMessage = "Niepowodzenie"
+                                    showingConfirmation = true
+                                }
+                            }
+                        }
+                        Section {
+                            Text("Historia wypożyczeń")
+                                .fontWeight(.semibold)
+                            List(viewModel.carRentHistory, id: \.id) { history in
+                                Text("oddanie: \(history.rent_end.formatDateTime())")
+                            }
                         }
                     }
-                    Form {
-                        TextField("", text: result.car_brand)
-                        TextField("", text: result.car_model)
-                        Text("id pojazdu: \(result.wrappedValue.id)")
-                        TextField("", text: result.car_motor)
-                        TextField("", value: result.car_rent_price_pln, formatter: NumberFormatter())
-                        TextField("", text: result.car_transmission)
-                        TextField("", text: result.car_body_type)
-                    }
-                }
-                Spacer()
-                Text("Historia wypożyczeń")
-                ForEach(viewModel.carRentHistory, id: \.id) { history in
-                    Text(history.rent_start)
                 }
             case .motorcycle:
-                ForEach($viewModel.motorcycle, id: \.id) { result in
-                    Button("Zapisz") {
-                        if viewModel.update(motorcycle: result.wrappedValue) {
-                            confirmationMessage = "Zaktualizowano dane"
-                            showingConfirmation = true
-                        } else {
-                            confirmationMessage = "Niepowodzenie"
-                            showingConfirmation = true
+                Form {
+                    ForEach($viewModel.motorcycle, id: \.id) { result in
+                        MotorcycleForm(motorcycle: result.wrappedValue, confirmationMessage: $confirmationMessage, showingConfirmation: $showingConfirmation)
+                        Section {
+                            Button("Zapisz zmiany") {
+                                if viewModel.update(motorcycle: result.wrappedValue) {
+                                    confirmationMessage = "Zaktualizowano dane"
+                                    showingConfirmation = true
+                                } else {
+                                    confirmationMessage = "Niepowodzenie"
+                                    showingConfirmation = true
+                                }
+                            }
+                        }
+                        Section {
+                            Text("Historia wypożyczeń")
+                                .fontWeight(.semibold)
+                            ForEach(viewModel.motorcycleRentHistory, id: \.id) { history in
+                                Text("oddanie: \(history.rent_end.formatDateTime())")
+                            }
                         }
                     }
-                    Form {
-                        TextField("", text: result.motorcycle_brand)
-                        TextField("", text: result.motorcycle_model)
-                        Text("id pojazdu: \(result.wrappedValue.id)")
-                        TextField("", text: result.motorcycle_motor)
-                        TextField("", value: result.motorcycle_rent_price_pln, formatter: NumberFormatter())
-                        TextField("", text: result.motorcycle_body_type)
-                    }
                 }
-                Spacer()
-                Text("Historia wypożyczeń")
-                ForEach(viewModel.motorcycleRentHistory, id: \.id) { history in
-                    Text(history.rent_start)
-                }
+                
             case .utility:
-                ForEach($viewModel.utility, id: \.id) { result in
-                    Button("Zapisz") {
-                        if viewModel.update(utility: result.wrappedValue) {
-                            confirmationMessage = "Zaktualizowano dane"
-                            showingConfirmation = true
-                        } else {
-                            confirmationMessage = "Niepowodzenie"
-                            showingConfirmation = true
+                Form {
+                    ForEach($viewModel.utility, id: \.id) { result in
+                        Section {
+                            UtilityForm(utility: result.wrappedValue, confirmationMessage: $confirmationMessage, showingConfirmation: $showingConfirmation)
+                        }
+                        Section {
+                            Button("Zapisz zmiany") {
+                                if viewModel.update(utility: result.wrappedValue) {
+                                    confirmationMessage = "Zaktualizowano dane"
+                                    showingConfirmation = true
+                                } else {
+                                    confirmationMessage = "Niepowodzenie"
+                                    showingConfirmation = true
+                                }
+                            }
+                        }
+                        Section {
+                            Text("Historia wypożyczeń")
+                                .fontWeight(.semibold)
+                            List(viewModel.utilityRentHistory, id: \.id) { history in
+                                Text("oddanie: \(history.rent_end.formatDateTime())")
+                            }
                         }
                     }
-                    Form {
-                        TextField("", text: result.utility_brand)
-                        TextField("", text: result.utility_model)
-                        Text("id pojazdu: \(result.wrappedValue.id)")
-                        TextField("", text: result.utility_motor)
-                        TextField("", value: result.utility_rent_price_pln, formatter: NumberFormatter())
-                        TextField("", text: result.utility_transmission)
-                        TextField("", text: result.utility_type)
-                    }
-                }
-                Spacer()
-                Text("Historia wypożyczeń")
-                List(viewModel.utilityRentHistory, id: \.id) { history in
-                    Text(history.rent_start)
                 }
             case .client:
-                ForEach($viewModel.client, id: \.id) { result in
-                    Button("Zapisz") {
-                        if viewModel.update(client: result.wrappedValue) {
-                            confirmationMessage = "Zaktualizowano dane"
-                            showingConfirmation = true
-                        } else {
-                            confirmationMessage = "Niepowodzenie"
-                            showingConfirmation = true
+                Form {
+                    ForEach($viewModel.client, id: \.id) { result in
+                        ClientForm(client: result.wrappedValue, confirmationMessage: $confirmationMessage, showingConfirmation: $showingConfirmation)
+                        
+                        Section {
+                            Button("Zapisz zmiany") {
+                                if viewModel.update(client: result.wrappedValue) {
+                                    confirmationMessage = "Zaktualizowano dane"
+                                    showingConfirmation = true
+                                } else {
+                                    confirmationMessage = "Niepowodzenie"
+                                    showingConfirmation = true
+                                }
+                            }
+                        }
+                        
+                        Section {
+                            Text("Historia wypożyczeń")
+                                .fontWeight(.semibold)
+                            List(viewModel.clientRentHistory, id: \.id) { history in
+                                Text("\(history.car_model) - koszt: \(history.total_price_with_insurance)\noddanie: \(history.rent_end.formatDateTime())")
+                            }
                         }
                     }
-                    Form {
-                        TextField("imię:", text: result.client_name)
-                        TextField("nazwisko:", text: result.client_surname)
-                        Text("id klienta: \(result.wrappedValue.id)")
-                        TextField("e-mail", text: result.client_email ?? "")
-                        TextField("adres:", text: result.client_address)
-                        TextField("miasto:", text: result.client_city)
-                        TextField("numer telefonu:", text: result.client_phone_nr)
-                        TextField("data wydania prawa jazdy:", text: result.client_driving_license_since)
-                    }
-                }
-                Spacer()
-                Text("Historia wypożyczeń")
-                List(viewModel.clientRentHistory, id: \.id) { history in
-                    Text("\(history.car_model) - koszt: \(history.total_price_with_insurance)")
                 }
             case .rent:
                 Text("todo")
@@ -142,6 +139,6 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(dataType: .car, id: 1)
+        DetailsView(dataType: .utility, id: 3)
     }
 }

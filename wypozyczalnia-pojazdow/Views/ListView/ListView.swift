@@ -32,22 +32,46 @@ struct ListView: View {
                     .frame(height: 30)
                     .frame(maxWidth: UIScreen.main.bounds.width - 40, alignment: .trailing)
                 }
-                
-                List($viewModel.dataRows, id: \.id) { item in
-                    VStack(alignment: .leading) {
-                        if viewModel.dataType == .rent {
-                            NavigationLink(destination: RentedView(dataType: item.wrappedValue.dataType, id: item.wrappedValue.id)) {
-                                    Text(item.wrappedValue.title)
-                                }
-                        } else {
-                            NavigationLink(destination: DetailsView(dataType: item.wrappedValue.dataType, id: item.wrappedValue.id)) {
-                                Text(item.wrappedValue.title)
-                                .swipeActions {
-                                    Button("Usuń") {
-                                        showConfirmationAlert = true
-                                        idToDelete = item.wrappedValue.id
+                Form {
+                    Section {
+                        switch viewModel.dataType {
+                        case .car:
+                            Text("Samochody")
+                                .font(.title)
+                        case .motorcycle:
+                            Text("Motocykle")
+                                .font(.title)
+                        case .utility:
+                            Text("Ciężarówki")
+                                .font(.title)
+                        case .client:
+                            Text("Klienci")
+                                .font(.title)
+                        case .rent:
+                            Text("Wypożyczone")
+                                .font(.title)
+                        }
+                    }
+                    Section {
+                        List($viewModel.dataRows, id: \.id) { item in
+                            VStack(alignment: .leading) {
+                                if viewModel.dataType == .rent {
+                                    NavigationLink(destination: RentedView(dataType: item.wrappedValue.dataType, id: item.wrappedValue.id)) {
+                                        Text(item.wrappedValue.title)
                                     }
-                                    .tint(.red)
+                                } else {
+                                    NavigationLink(destination: DetailsView(dataType: item.wrappedValue.dataType, id: item.wrappedValue.id)) {
+                                        Text(item.wrappedValue.title)
+                                            .swipeActions {
+                                                if viewModel.dataType != .client {
+                                                    Button("Usuń") {
+                                                        showConfirmationAlert = true
+                                                        idToDelete = item.wrappedValue.id
+                                                    }
+                                                    .tint(.red)
+                                                }
+                                            }
+                                    }
                                 }
                             }
                         }

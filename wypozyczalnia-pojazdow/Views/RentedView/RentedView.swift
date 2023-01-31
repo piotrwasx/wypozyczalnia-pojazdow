@@ -36,7 +36,7 @@ struct RentedView: View {
                 }
                 Text("Historia wypożyczeń")
                 List(viewModel.carRentHistory.reversed(), id: \.id) { history in
-                    Text("\(history.rent_start) \(history.rent_end)")
+                    Text("od: \(history.rent_start)\ndo: \(history.rent_end)")
                 }
             case .motorcycle:
                 ForEach($viewModel.motorcycle, id: \.id) { result in
@@ -53,7 +53,7 @@ struct RentedView: View {
                 }
                 Text("Historia wypożyczeń")
                 List(viewModel.motorcycleRentHistory.reversed(), id: \.id) { history in
-                    Text("\(history.rent_start) \(history.rent_end)")
+                    Text("od: \(history.rent_start)\ndo: \(history.rent_end)")
                 }
             case .utility:
                 ForEach($viewModel.utility, id: \.id) { result in
@@ -71,7 +71,7 @@ struct RentedView: View {
                 }
                 Text("Historia wypożyczeń")
                 List(viewModel.utilityRentHistory.reversed(), id: \.id) { history in
-                    Text("\(history.rent_start) \(history.rent_end)")
+                    Text("od: \(history.rent_start)\ndo: \(history.rent_end)")
                 }
             default:
                 Text("wrong data type")
@@ -82,9 +82,9 @@ struct RentedView: View {
             viewModel.loadRentHistory(id: id, dataType: dataType)
         }
         .alert("Powiadomienie", isPresented: $showingConfirmation) {}
-    message: {
-        Text(confirmationMessage)
-    }
+        message: {
+            Text(confirmationMessage)
+        }
     }
 }
 
