@@ -25,6 +25,9 @@ struct AddItemView: View {
                 VehicleFormView(viewModel: AddItemViewModel(), dataType: .motorcycle, showingConfirmation: $showConfirmationAlert, confirmationMessage: $confirmationMessage)
             case .car:
                 VehicleFormView(viewModel: AddItemViewModel(), dataType: .car, showingConfirmation: $showConfirmationAlert, confirmationMessage: $confirmationMessage)
+            case .rent:
+                VehicleFormView(viewModel: AddItemViewModel(), dataType: .rent, showingConfirmation: $showConfirmationAlert, confirmationMessage: $confirmationMessage)
+
             }
         }
         .alert("Powiadomienie", isPresented: $showConfirmationAlert) {

@@ -48,6 +48,11 @@ final class DetailsViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.client = response
                 }}
+        case .rent:
+            NetworkController.fetchData(url: "http://127.0.0.1:5000/api/rented/\(id)", dataType: [Car].self) { response in
+                DispatchQueue.main.async {
+                    self.car = response
+                }}
         }
     }
     
@@ -73,6 +78,8 @@ final class DetailsViewModel: ObservableObject {
                 DispatchQueue.main.async {
                     self.clientRentHistory = response
                 }}
+        case .rent:
+            return
         }
     }
     

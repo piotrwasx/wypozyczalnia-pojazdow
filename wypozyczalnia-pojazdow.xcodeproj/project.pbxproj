@@ -20,6 +20,7 @@
 		127EDA5F298850FE003CC73F /* String+isNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA5E298850FE003CC73F /* String+isNumber.swift */; };
 		127EDA612988525D003CC73F /* String+isValidEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA602988525D003CC73F /* String+isValidEmail.swift */; };
 		127EDA7129892F89003CC73F /* OperatorOverload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA7029892F89003CC73F /* OperatorOverload.swift */; };
+		127EDA73298963DB003CC73F /* RentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA72298963DB003CC73F /* RentedView.swift */; };
 		12B14D512981B50200D9672B /* wypozyczalnia_pojazdowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D502981B50200D9672B /* wypozyczalnia_pojazdowApp.swift */; };
 		12B14D532981B50200D9672B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B14D522981B50200D9672B /* ListView.swift */; };
 		12B14D552981B50300D9672B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12B14D542981B50300D9672B /* Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		127EDA5E298850FE003CC73F /* String+isNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isNumber.swift"; sourceTree = "<group>"; };
 		127EDA602988525D003CC73F /* String+isValidEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isValidEmail.swift"; sourceTree = "<group>"; };
 		127EDA7029892F89003CC73F /* OperatorOverload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorOverload.swift; sourceTree = "<group>"; };
+		127EDA72298963DB003CC73F /* RentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentedView.swift; sourceTree = "<group>"; };
 		12B14D4D2981B50200D9672B /* wypozyczalnia-pojazdow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wypozyczalnia-pojazdow.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12B14D502981B50200D9672B /* wypozyczalnia_pojazdowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wypozyczalnia_pojazdowApp.swift; sourceTree = "<group>"; };
 		12B14D522981B50200D9672B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -162,6 +164,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		127EDA74298963E3003CC73F /* RentedView */ = {
+			isa = PBXGroup;
+			children = (
+				127EDA72298963DB003CC73F /* RentedView.swift */,
+			);
+			path = RentedView;
+			sourceTree = "<group>";
+		};
 		12B14D442981B50100D9672B = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +250,7 @@
 				127EDA4429847617003CC73F /* AddItemView */,
 				12B14D892982A03500D9672B /* DetailsView */,
 				12B14D882982A02900D9672B /* ListView */,
+				127EDA74298963E3003CC73F /* RentedView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -462,6 +473,7 @@
 				12B14D8C2982A09F00D9672B /* NetworkController.swift in Sources */,
 				127EDA4E2985B347003CC73F /* ClientFormView.swift in Sources */,
 				127EDA4629847635003CC73F /* AddItemView.swift in Sources */,
+				127EDA73298963DB003CC73F /* RentedView.swift in Sources */,
 				127EDA4A298574B8003CC73F /* DataTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

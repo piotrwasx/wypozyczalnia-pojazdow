@@ -8,5 +8,5 @@
 import Foundation
 
 enum DataTypes {
-    case car, motorcycle, utility, client
+    case car, motorcycle, utility, client, rent
 }

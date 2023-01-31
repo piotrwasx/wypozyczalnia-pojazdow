@@ -48,7 +48,7 @@ struct VehicleFormView: View {
             Button("Zatwierdź dane") {
                 switch dataType {
                 case .car:
-                   let car = Car(car_brand: brand, car_model: model, car_year: productionDate, car_mileage_km: mileage, car_transmisson: transmission, car_motor: motor, car_body_type: type, car_rent_price_pln: price)
+                   let car = Car(car_brand: brand, car_model: model, car_year: productionDate, car_mileage_km: mileage, car_transmission: transmission, car_motor: motor, car_body_type: type, car_rent_price_pln: price)
                     
                     if viewModel.processData(car: car) {
                         confirmationMessage = "Dodano nowy samochód"

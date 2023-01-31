@@ -25,22 +25,30 @@ struct ListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                NavigationLink(destination: AddItemView(dataType: viewModel.dataType)) {
-                    Label("", systemImage: "plus")
+                if viewModel.dataType != .rent {
+                    NavigationLink(destination: AddItemView(dataType: viewModel.dataType)) {
+                        Label("", systemImage: "plus")
+                    }
+                    .frame(height: 30)
+                    .frame(maxWidth: UIScreen.main.bounds.width - 40, alignment: .trailing)
                 }
-                .frame(height: 30)
-                .frame(maxWidth: UIScreen.main.bounds.width - 40, alignment: .trailing)
                 
                 List($viewModel.dataRows, id: \.id) { item in
                     VStack(alignment: .leading) {
-                        NavigationLink(destination: DetailsView(dataType: item.wrappedValue.dataType, id: item.wrappedValue.id)) {
-                            Text(item.wrappedValue.title)
-                                .swipeActions {
-                                Button("Usuń") {
-                                    showConfirmationAlert = true
-                                    idToDelete = item.wrappedValue.id
+                        if viewModel.dataType == .rent {
+                            NavigationLink(destination: RentedView(dataType: item.wrappedValue.dataType, id: item.wrappedValue.id)) {
+                                    Text(item.wrappedValue.title)
                                 }
-                                .tint(.red)
+                        } else {
+                            NavigationLink(destination: DetailsView(dataType: item.wrappedValue.dataType, id: item.wrappedValue.id)) {
+                                Text(item.wrappedValue.title)
+                                .swipeActions {
+                                    Button("Usuń") {
+                                        showConfirmationAlert = true
+                                        idToDelete = item.wrappedValue.id
+                                    }
+                                    .tint(.red)
+                                }
                             }
                         }
                     }
@@ -62,15 +70,15 @@ struct ListView: View {
                 Text("Czy chcesz usunąć wybraną pozycję?")
             }
             .alert("Powiadomienie", isPresented: $showResultAlert) {}
-            message: {
-                Text(resultMessage)
-            }
+        message: {
+            Text(resultMessage)
+        }
         }
     }
 }
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView(viewModel: ListViewModel(dataType: .car))
+        ListView(viewModel: ListViewModel(dataType: .rent))
     }
 }

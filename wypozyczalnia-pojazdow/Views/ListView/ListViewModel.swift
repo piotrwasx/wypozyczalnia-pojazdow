@@ -51,6 +51,26 @@ final class ListViewModel: ObservableObject {
                         self.dataRows.append(DataListViewRow(id: item.id, title: "\(item.client_name) \(item.client_surname)", dataType: .client))
                     }
                 }}
+        case .rent:
+            self.dataRows = []
+            NetworkController.fetchData(url: "http://127.0.0.1:5000/api/rented/cars", dataType: [CarTitle].self) { response in
+                DispatchQueue.main.async {
+                    for item in response {
+                        self.dataRows.append(DataListViewRow(id: item.id, title: "\(item.car_model) \(item.car_brand)", dataType: .car))
+                    }
+                }}
+            NetworkController.fetchData(url: "http://127.0.0.1:5000/api/rented/motorcycles", dataType: [MotorcycleTitle].self) { response in
+                DispatchQueue.main.async {
+                    for item in response {
+                        self.dataRows.append(DataListViewRow(id: item.id, title: "\(item.motorcycle_model) \(item.motorcycle_brand)", dataType: .motorcycle))
+                    }
+                }}
+            NetworkController.fetchData(url: "http://127.0.0.1:5000/api/rented/utilities", dataType: [UtilityTitle].self) { response in
+                DispatchQueue.main.async {
+                    for item in response {
+                        self.dataRows.append(DataListViewRow(id: item.id, title: "\(item.utility_model) \(item.utility_brand)", dataType: .utility))
+                    }
+                }}
         }
     }
     
@@ -64,7 +84,9 @@ final class ListViewModel: ObservableObject {
             return await NetworkController.deleteData(url: "http://127.0.0.1:5000/api/motorcycles/\(id)")
         case .car:
             return await NetworkController.deleteData(url: "http://127.0.0.1:5000/api/cars/\(id)")
+        default:
+            return "Zły typ danych"
         }
+        
     }
-    
 }

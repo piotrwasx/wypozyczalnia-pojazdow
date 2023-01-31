@@ -37,7 +37,7 @@ struct DetailsView: View {
                         Text("id pojazdu: \(result.wrappedValue.id)")
                         TextField("", text: result.car_motor)
                         TextField("", value: result.car_rent_price_pln, formatter: NumberFormatter())
-                        TextField("", text: result.car_transmisson)
+                        TextField("", text: result.car_transmission)
                         TextField("", text: result.car_body_type)
                     }
                 }
@@ -124,6 +124,8 @@ struct DetailsView: View {
                 List(viewModel.clientRentHistory, id: \.id) { history in
                     Text("\(history.car_model) - koszt: \(history.total_price_with_insurance)")
                 }
+            case .rent:
+                Text("todo")
             }
             
         }
@@ -140,6 +142,6 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(dataType: .client, id: 6)
+        DetailsView(dataType: .car, id: 1)
     }
 }
