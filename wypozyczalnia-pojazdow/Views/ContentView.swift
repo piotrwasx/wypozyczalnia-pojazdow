@@ -9,35 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var motorcycleViewModel = ListViewModel(dataType: .motorcycle)
-    @ObservedObject var carViewModel = ListViewModel(dataType: .car)
-    @ObservedObject var utilityViewModel = ListViewModel(dataType: .utility)
-    @ObservedObject var clientViewModel = ListViewModel(dataType: .client)
-    
     var body: some View {
         TabView {
-            ListView(rows: $motorcycleViewModel.dataRows)
+            ListView(viewModel: ListViewModel(dataType: .motorcycle))
                 .tabItem {
                     Label("Motocykle", systemImage: "bicycle")
                 }
-            ListView(rows: $carViewModel.dataRows)
+            ListView(viewModel: ListViewModel(dataType: .car))
                 .tabItem {
                     Label("Samochody", systemImage: "car")
                 }
-            ListView(rows: $utilityViewModel.dataRows)
+            ListView(viewModel: ListViewModel(dataType: .utility))
                 .tabItem {
                     Label("Ciężarowe", systemImage: "box.truck")
                 }
-            ListView(rows: $clientViewModel.dataRows)
+            ListView(viewModel: ListViewModel(dataType: .client))
                 .tabItem {
                     Label("Klienci", systemImage: "person")
                 }
-        }
-        .onAppear() {
-            motorcycleViewModel.loadData()
-            carViewModel.loadData()
-            utilityViewModel.loadData()
-            clientViewModel.loadData()
         }
     }
 }

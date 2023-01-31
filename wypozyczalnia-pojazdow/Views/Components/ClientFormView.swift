@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ClientFormView: View {
     
+    @ObservedObject var viewModel: AddItemViewModel
+    
     @Binding var showingConfirmation: Bool
     @Binding var confirmationMessage: String
     
@@ -29,12 +31,14 @@ struct ClientFormView: View {
             DatePicker("Data wydania prawa jazdy:", selection: $selectedDate, displayedComponents: .date)
             
             Button("Zatwierdź dane") {
-                client.client_email = email
                 client.client_driving_license_since = dateFormatter.string(from: $selectedDate.wrappedValue)
-                Task {
-                    confirmationMessage = await NetworkController.sendData(url: "http://127.0.0.1:5000/api/clients/", dataToSend: client)
-                    showingConfirmation = true
+                client.client_email = $email.wrappedValue
+                if viewModel.processData(client: client) {
+                    confirmationMessage = "Dodano nowego klienta"
+                } else {
+                    confirmationMessage = "Niepowodzenie"
                 }
+                showingConfirmation = true
             }
         }
     }
@@ -42,6 +46,6 @@ struct ClientFormView: View {
 
 struct ClientFormView_Previews: PreviewProvider {
     static var previews: some View {
-        ClientFormView(showingConfirmation: .constant(false), confirmationMessage: .constant(""))
+        ClientFormView(viewModel: AddItemViewModel(), showingConfirmation: .constant(false), confirmationMessage: .constant(""))
     }
 }

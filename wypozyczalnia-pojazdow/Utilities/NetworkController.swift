@@ -42,4 +42,40 @@ struct NetworkController {
         return "Wystąpił błąd połączenia"
     }
         
+    static func alterData<T: Codable>(url: String, dataToSend: T) async -> String {
+        if let url = URL(string: url) {
+            guard let encoded = try? JSONEncoder().encode(dataToSend) else {
+                return "Wprowadzono niepoprawne dane"
+            }
+            var request = URLRequest(url: url)
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpMethod = "PUT"
+
+            do {
+                _ = try await URLSession.shared.upload(for: request, from: encoded)
+                return "Formularz został wysłany"
+            } catch {
+                return "Niepowodzenie"
+            }
+        }
+        return "Wystąpił błąd połączenia"
+    }
+    
+    static func deleteData(url: String) async -> String {
+            if let url = URL(string: url) {
+                var request = URLRequest(url: url)
+                request.httpMethod = "DELETE"
+
+                URLSession.shared.dataTask(with: request) { data, response, error in
+                    guard error == nil else {
+                        print("Error: error calling DELETE")
+                        print(error!)
+                        return
+                    }
+                }.resume()
+                return "Usunięto dane"
+            } else {
+                return "Błąd"
+            }
+        }
 }

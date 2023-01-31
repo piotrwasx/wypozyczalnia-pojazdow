@@ -9,25 +9,25 @@ import SwiftUI
 
 struct AddItemView: View {
     
-    let dataType: DataTypes = .car
+    let dataType: DataTypes
     
-    @State private var showingConfirmation = false
+    @State private var showConfirmationAlert = false
     @State private var confirmationMessage = ""
     
     var body: some View {
         VStack {
             switch dataType {
             case .client:
-                ClientFormView(showingConfirmation: $showingConfirmation, confirmationMessage: $confirmationMessage)
+                ClientFormView(viewModel: AddItemViewModel(), showingConfirmation: $showConfirmationAlert, confirmationMessage: $confirmationMessage)
             case .utility:
-                UtilityFormView(showingConfirmation: $showingConfirmation, confirmationMessage: $confirmationMessage)
+                VehicleFormView(viewModel: AddItemViewModel(), dataType: .utility, showingConfirmation: $showConfirmationAlert, confirmationMessage: $confirmationMessage)
             case .motorcycle:
-                MotorcycleFormView(showingConfirmation: $showingConfirmation, confirmationMessage: $confirmationMessage)
+                VehicleFormView(viewModel: AddItemViewModel(), dataType: .motorcycle, showingConfirmation: $showConfirmationAlert, confirmationMessage: $confirmationMessage)
             case .car:
-                CarFormView(showingConfirmation: $showingConfirmation, confirmationMessage: $confirmationMessage)
+                VehicleFormView(viewModel: AddItemViewModel(), dataType: .car, showingConfirmation: $showConfirmationAlert, confirmationMessage: $confirmationMessage)
             }
         }
-        .alert("Gratulacje", isPresented: $showingConfirmation) {
+        .alert("Powiadomienie", isPresented: $showConfirmationAlert) {
             Button("OK") { }
         } message: {
             Text(confirmationMessage)
@@ -37,6 +37,6 @@ struct AddItemView: View {
 
 struct AddItemView_Previews: PreviewProvider {
     static var previews: some View {
-        AddItemView()
+        AddItemView(dataType: .car)
     }
 }

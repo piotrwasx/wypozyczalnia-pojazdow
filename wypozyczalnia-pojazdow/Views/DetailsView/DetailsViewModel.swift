@@ -21,6 +21,11 @@ final class DetailsViewModel: ObservableObject {
     @Published var client = [Client]()
     @Published var clientRentHistory = [ClientRent]()
     
+    @Published var confirmationMessage = ""
+    @Published var showingConfirmation = false
+    
+    var urls = ["clients": "http://127.0.0.1:5000/api/clients/", "motorcycles": "http://127.0.0.1:5000/api/motorcycles/", "cars": "http://127.0.0.1:5000/api/cars/", "utilities": "http://127.0.0.1:5000/api/utilities/"]
+    
     func loadInfo(id: Int, dataType: DataTypes) {
         switch dataType {
         case .car:
@@ -70,4 +75,45 @@ final class DetailsViewModel: ObservableObject {
                 }}
         }
     }
+    
+    func update(car: Car) -> Bool {
+        if car.isCarDataValid(car: car) {
+            Task {
+                await NetworkController.alterData(url: urls["cars"]!, dataToSend: car)
+            }
+            return true
+        }
+        return false
+    }
+    
+    func update(motorcycle: Motorcycle) -> Bool {
+        if motorcycle.isMotorcycleDataValid(motorcycle: motorcycle) {
+            Task {
+                await NetworkController.alterData(url: urls["motorcycles"]!, dataToSend: motorcycle)
+            }
+            return true
+        }
+        return false
+    }
+    
+    func update(utility: Utility) -> Bool {
+        if utility.isUtilityDataValid(utility: utility) {
+            Task {
+                 await NetworkController.alterData(url: urls["utilities"]!, dataToSend: utility)
+            }
+            return true
+        }
+        return false
+    }
+    
+    func update(client: Client) -> Bool {
+        if client.isClientDataValid(client: client) {
+            Task {
+                await NetworkController.alterData(url: urls["clients"]!, dataToSend: client) 
+            }
+            return true
+        }
+        return false
+    }
+    
 }

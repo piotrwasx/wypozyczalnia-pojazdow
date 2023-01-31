@@ -24,4 +24,25 @@ struct Motorcycle: Codable {
         self.motorcycle_body_type = ""
         self.motorcycle_rent_price_pln = 0
     }
+    
+    init(motorcycle_model: String, motorcycle_brand: String, motorcycle_year: Int, motorcycle_mileage_km: Int, motorcycle_motor: String, motorcycle_body_type: String, motorcycle_rent_price_pln: Int) {
+        self.id = 0
+        self.motorcycle_model = motorcycle_model
+        self.motorcycle_brand = motorcycle_brand
+        self.motorcycle_year = motorcycle_year
+        self.motorcycle_mileage_km = motorcycle_mileage_km
+        self.motorcycle_motor = motorcycle_motor
+        self.motorcycle_body_type = motorcycle_body_type
+        self.motorcycle_rent_price_pln = motorcycle_rent_price_pln
+    }
+    
+    func isMotorcycleDataValid(motorcycle: Motorcycle) -> Bool {
+        if motorcycle.motorcycle_brand.isEmpty || motorcycle.motorcycle_model.isEmpty || motorcycle.motorcycle_body_type.isEmpty || motorcycle.motorcycle_motor.isEmpty {
+            return false
+        }
+        if motorcycle.motorcycle_brand.isNumber || motorcycle.motorcycle_model.isNumber || motorcycle.motorcycle_body_type.isNumber || motorcycle.motorcycle_motor.isNumber {
+            return false
+        }
+        return true
+    }
 }

@@ -20,6 +20,7 @@ final class ListViewModel: ObservableObject {
     func loadData() {
         switch dataType {
         case .car:
+            self.dataRows = []
             NetworkController.fetchData(url: "http://127.0.0.1:5000/api/cars", dataType: [CarTitle].self) { response in
                 DispatchQueue.main.async {
                     for item in response {
@@ -27,6 +28,7 @@ final class ListViewModel: ObservableObject {
                     }
                 }}
         case .motorcycle:
+            self.dataRows = []
             NetworkController.fetchData(url: "http://127.0.0.1:5000/api/motorcycles", dataType: [MotorcycleTitle].self) { response in
                 DispatchQueue.main.async {
                     for item in response {
@@ -34,6 +36,7 @@ final class ListViewModel: ObservableObject {
                     }
                 }}
         case .utility:
+            self.dataRows = []
             NetworkController.fetchData(url: "http://127.0.0.1:5000/api/utilities", dataType: [UtilityTitle].self) { response in
                 DispatchQueue.main.async {
                     for item in response {
@@ -41,6 +44,7 @@ final class ListViewModel: ObservableObject {
                     }
                 }}
         case .client:
+            self.dataRows = []
             NetworkController.fetchData(url: "http://127.0.0.1:5000/api/clients", dataType: [ClientTitle].self) { response in
                 DispatchQueue.main.async {
                     for item in response {
@@ -49,4 +53,18 @@ final class ListViewModel: ObservableObject {
                 }}
         }
     }
+    
+    func deleteData(id: Int, dataType: DataTypes) async -> String {
+        switch dataType {
+        case .client:
+            return await NetworkController.deleteData(url: "http://127.0.0.1:5000/api/clients/\(id)")
+        case .utility:
+            return await NetworkController.deleteData(url: "http://127.0.0.1:5000/api/utilities/\(id)")
+        case .motorcycle:
+            return await NetworkController.deleteData(url: "http://127.0.0.1:5000/api/motorcycles/\(id)")
+        case .car:
+            return await NetworkController.deleteData(url: "http://127.0.0.1:5000/api/cars/\(id)")
+        }
+    }
+    
 }
