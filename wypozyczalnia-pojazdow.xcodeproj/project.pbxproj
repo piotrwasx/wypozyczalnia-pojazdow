@@ -10,6 +10,8 @@
 		120D9556298A5D24003DFF1A /* NewRentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D9555298A5D24003DFF1A /* NewRentForm.swift */; };
 		120D9558298A5F38003DFF1A /* NewRentFormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D9557298A5F38003DFF1A /* NewRentFormModel.swift */; };
 		120D955A298A7C75003DFF1A /* Bool+IntValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D9559298A7C75003DFF1A /* Bool+IntValue.swift */; };
+		120D955E298B12E6003DFF1A /* RentedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D955D298B12E6003DFF1A /* RentedListView.swift */; };
+		120D9560298B1592003DFF1A /* RentedListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120D955F298B1592003DFF1A /* RentedListViewModel.swift */; };
 		127EDA3F298421F0003CC73F /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA3E298421F0003CC73F /* Client.swift */; };
 		127EDA4129842386003CC73F /* ClientTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA4029842386003CC73F /* ClientTitle.swift */; };
 		127EDA4329844FAF003CC73F /* ClientRent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127EDA4229844FAF003CC73F /* ClientRent.swift */; };
@@ -73,6 +75,8 @@
 		120D9555298A5D24003DFF1A /* NewRentForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRentForm.swift; sourceTree = "<group>"; };
 		120D9557298A5F38003DFF1A /* NewRentFormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRentFormModel.swift; sourceTree = "<group>"; };
 		120D9559298A7C75003DFF1A /* Bool+IntValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+IntValue.swift"; sourceTree = "<group>"; };
+		120D955D298B12E6003DFF1A /* RentedListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentedListView.swift; sourceTree = "<group>"; };
+		120D955F298B1592003DFF1A /* RentedListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentedListViewModel.swift; sourceTree = "<group>"; };
 		127EDA3E298421F0003CC73F /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		127EDA4029842386003CC73F /* ClientTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTitle.swift; sourceTree = "<group>"; };
 		127EDA4229844FAF003CC73F /* ClientRent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientRent.swift; sourceTree = "<group>"; };
@@ -143,6 +147,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		120D9562298B1A18003DFF1A /* NewRentForm */ = {
+			isa = PBXGroup;
+			children = (
+				120D9555298A5D24003DFF1A /* NewRentForm.swift */,
+				120D9557298A5F38003DFF1A /* NewRentFormModel.swift */,
+			);
+			path = NewRentForm;
+			sourceTree = "<group>";
+		};
 		127EDA3D298421DD003CC73F /* Client */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,9 +169,10 @@
 		127EDA4429847617003CC73F /* AddItemView */ = {
 			isa = PBXGroup;
 			children = (
+				127EDA4D2985B347003CC73F /* ClientFormView.swift */,
+				127EDA502985B5B0003CC73F /* VehicleFormView.swift */,
 				127EDA4529847635003CC73F /* AddItemView.swift */,
 				127EDA472985400B003CC73F /* AddItemViewModel.swift */,
-				120D9557298A5F38003DFF1A /* NewRentFormModel.swift */,
 			);
 			path = AddItemView;
 			sourceTree = "<group>";
@@ -166,8 +180,6 @@
 		127EDA4F2985B58B003CC73F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				127EDA4D2985B347003CC73F /* ClientFormView.swift */,
-				127EDA502985B5B0003CC73F /* VehicleFormView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -186,6 +198,8 @@
 		127EDA74298963E3003CC73F /* RentedView */ = {
 			isa = PBXGroup;
 			children = (
+				120D955D298B12E6003DFF1A /* RentedListView.swift */,
+				120D955F298B1592003DFF1A /* RentedListViewModel.swift */,
 				127EDA72298963DB003CC73F /* RentedView.swift */,
 			);
 			path = RentedView;
@@ -194,7 +208,6 @@
 		12B14D442981B50100D9672B = {
 			isa = PBXGroup;
 			children = (
-				120D9555298A5D24003DFF1A /* NewRentForm.swift */,
 				12B14D4F2981B50200D9672B /* wypozyczalnia-pojazdow */,
 				12B14D602981B50300D9672B /* wypozyczalnia-pojazdowTests */,
 				12B14D6A2981B50300D9672B /* wypozyczalnia-pojazdowUITests */,
@@ -265,6 +278,7 @@
 		12B14D81298281D900D9672B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				120D9562298B1A18003DFF1A /* NewRentForm */,
 				12B14D9F2982D37700D9672B /* ContentView.swift */,
 				127EDA4F2985B58B003CC73F /* Components */,
 				127EDA4429847617003CC73F /* AddItemView */,
@@ -475,6 +489,7 @@
 				127EDA4129842386003CC73F /* ClientTitle.swift in Sources */,
 				12B14D8E2982A49200D9672B /* DetailsViewModel.swift in Sources */,
 				127EDA782989AC2B003CC73F /* MotorcycleForm.swift in Sources */,
+				120D9560298B1592003DFF1A /* RentedListViewModel.swift in Sources */,
 				127EDA7A2989AEB5003CC73F /* UtilityForm.swift in Sources */,
 				127EDA512985B5B0003CC73F /* VehicleFormView.swift in Sources */,
 				127EDA482985400B003CC73F /* AddItemViewModel.swift in Sources */,
@@ -499,6 +514,7 @@
 				127EDA7E2989B585003CC73F /* String+Split.swift in Sources */,
 				12B14DA02982D37700D9672B /* ContentView.swift in Sources */,
 				12B14D832982839200D9672B /* DetailsView.swift in Sources */,
+				120D955E298B12E6003DFF1A /* RentedListView.swift in Sources */,
 				120D9558298A5F38003DFF1A /* NewRentFormModel.swift in Sources */,
 				127EDA612988525D003CC73F /* String+isValidEmail.swift in Sources */,
 				120D9556298A5D24003DFF1A /* NewRentForm.swift in Sources */,

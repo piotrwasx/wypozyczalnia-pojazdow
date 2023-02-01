@@ -13,6 +13,7 @@ struct Car: Codable {
     var car_year, car_mileage_km: Int
     var car_transmission, car_motor, car_body_type: String
     var car_rent_price_pln: Int
+    var car_availability: Bool
     
     init() {
         self.id = 0
@@ -24,6 +25,7 @@ struct Car: Codable {
         self.car_motor = ""
         self.car_body_type = ""
         self.car_rent_price_pln = 0
+        self.car_availability = true
     }
     
     init(car_brand: String, car_model: String, car_year: Int, car_mileage_km: Int, car_transmission: String, car_motor: String, car_body_type: String, car_rent_price_pln: Int) {
@@ -36,6 +38,7 @@ struct Car: Codable {
         self.car_motor = car_motor
         self.car_body_type = car_body_type
         self.car_rent_price_pln = car_rent_price_pln
+        self.car_availability = true
     }
     
     func isCarDataValid(car: Car) -> Bool {

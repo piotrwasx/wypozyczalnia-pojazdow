@@ -27,7 +27,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Klienci", systemImage: "person")
                 }
-            ListView(viewModel: ListViewModel(dataType: .rent))
+            RentedListView()
                 .tabItem {
                     Label("Wypożyczone", systemImage: "cart.fill")
                 }

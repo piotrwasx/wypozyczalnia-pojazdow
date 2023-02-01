@@ -20,10 +20,16 @@ struct MotorcycleForm: View {
             Section {
                 TextField("marka:", text: $motorcycle.motorcycle_brand)
                 TextField("model:", text: $motorcycle.motorcycle_model)
-                Text("id: \($motorcycle.wrappedValue.id)")
                 TextField("rodzaj paliwa:", text: $motorcycle.motorcycle_motor)
                 TextField("cena:", value: $motorcycle.motorcycle_rent_price_pln, formatter: NumberFormatter())
                 TextField("typ nadwozia:", text: $motorcycle.motorcycle_body_type)
+            } header: {
+                Text("dane (kliknij, aby edytować)")
+            }
+            Section {
+                Text("id: \($motorcycle.wrappedValue.id)")
+            } header: {
+                Text("id pojazdu")
             }
         }
     }

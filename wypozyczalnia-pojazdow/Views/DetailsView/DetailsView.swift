@@ -72,9 +72,8 @@ struct DetailsView: View {
             case .utility:
                 Form {
                     ForEach($viewModel.utility, id: \.id) { result in
-                        Section {
-                            UtilityForm(utility: result.wrappedValue, confirmationMessage: $confirmationMessage, showingConfirmation: $showingConfirmation)
-                        }
+                        UtilityForm(utility: result.wrappedValue, confirmationMessage: $confirmationMessage, showingConfirmation: $showingConfirmation)
+                        
                         Section {
                             Button("Zapisz zmiany") {
                                 if viewModel.update(utility: result.wrappedValue) {

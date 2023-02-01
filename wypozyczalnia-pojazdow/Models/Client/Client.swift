@@ -29,7 +29,7 @@ struct Client: Codable {
         if client.client_surname.isEmpty || client.client_name.isEmpty || client.client_address.isEmpty || client.client_street_nr.isEmpty || client.client_city.isEmpty || client.client_driving_license_since.isEmpty || client.client_phone_nr.isEmpty {
             return false
         }
-        if client.client_name.isNumber || client.client_surname.isNumber || client.client_address.isNumber || client.client_street_nr.isNumber || client.client_city.isNumber {
+        if client.client_name.isNumber || client.client_surname.isNumber || client.client_address.isNumber || client.client_city.isNumber {
             return false
         }
         if client.client_email != nil {

@@ -13,6 +13,7 @@ struct Motorcycle: Codable {
     var motorcycle_year, motorcycle_mileage_km: Int
     var motorcycle_motor, motorcycle_body_type: String
     var motorcycle_rent_price_pln: Int
+    var motorcycle_availability: Bool
     
     init() {
         self.id = 0
@@ -23,6 +24,7 @@ struct Motorcycle: Codable {
         self.motorcycle_motor = ""
         self.motorcycle_body_type = ""
         self.motorcycle_rent_price_pln = 0
+        self.motorcycle_availability = true
     }
     
     init(motorcycle_model: String, motorcycle_brand: String, motorcycle_year: Int, motorcycle_mileage_km: Int, motorcycle_motor: String, motorcycle_body_type: String, motorcycle_rent_price_pln: Int) {
@@ -34,6 +36,7 @@ struct Motorcycle: Codable {
         self.motorcycle_motor = motorcycle_motor
         self.motorcycle_body_type = motorcycle_body_type
         self.motorcycle_rent_price_pln = motorcycle_rent_price_pln
+        self.motorcycle_availability = true
     }
     
     func isMotorcycleDataValid(motorcycle: Motorcycle) -> Bool {

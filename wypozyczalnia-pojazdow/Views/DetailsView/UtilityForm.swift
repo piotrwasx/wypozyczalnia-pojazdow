@@ -18,13 +18,19 @@ struct UtilityForm: View {
     var body: some View {
         List {
             Section {
-                TextField("", text: $utility.utility_brand)
-                TextField("", text: $utility.utility_model)
+                TextField("marka:", text: $utility.utility_brand)
+                TextField("model:", text: $utility.utility_model)
+                TextField("rodzaj paliwa:", text: $utility.utility_motor)
+                TextField("cena:", value: $utility.utility_rent_price_pln, formatter: NumberFormatter())
+                TextField("skrzynia biegów", text: $utility.utility_transmission)
+                TextField("typ nadwozia", text: $utility.utility_type)
+            } header: {
+                Text("dane (kliknij, aby edytować)")
+            }
+            Section {
                 Text("id pojazdu: \($utility.wrappedValue.id)")
-                TextField("", text: $utility.utility_motor)
-                TextField("", value: $utility.utility_rent_price_pln, formatter: NumberFormatter())
-                TextField("", text: $utility.utility_transmission)
-                TextField("", text: $utility.utility_type)
+            } header: {
+                Text("id pojazdu")
             }
         }
     }

@@ -13,6 +13,7 @@ struct Utility: Codable {
     var utility_year, utility_mileage_km: Int
     var utility_transmission, utility_motor, utility_type: String
     var utility_rent_price_pln: Int
+    var utility_availability: Bool
     
     init() {
         self.id = 0
@@ -24,6 +25,7 @@ struct Utility: Codable {
         self.utility_motor = ""
         self.utility_type = ""
         self.utility_rent_price_pln = 0
+        self.utility_availability = true
     }
     
     init(utility_brand: String, utility_model: String, utility_year: Int, utility_mileage_km: Int, utility_transmission: String, utility_motor: String, utility_type: String, utility_rent_price_pln: Int) {
@@ -36,6 +38,7 @@ struct Utility: Codable {
         self.utility_motor = utility_motor
         self.utility_type = utility_type
         self.utility_rent_price_pln = utility_rent_price_pln
+        self.utility_availability = true
     }
     
     func isUtilityDataValid(utility: Utility) -> Bool {
