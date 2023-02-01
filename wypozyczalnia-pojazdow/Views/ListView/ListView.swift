@@ -32,26 +32,46 @@ struct ListView: View {
                     .frame(height: 30)
                     .frame(maxWidth: UIScreen.main.bounds.width - 40, alignment: .trailing)
                 }
-                Form {
-                    Section {
-                        switch viewModel.dataType {
-                        case .car:
-                            Text("Samochody")
-                                .font(.title)
-                        case .motorcycle:
-                            Text("Motocykle")
-                                .font(.title)
-                        case .utility:
-                            Text("Ciężarówki")
-                                .font(.title)
-                        case .client:
-                            Text("Klienci")
-                                .font(.title)
-                        case .rent:
-                            Text("Wypożyczone")
-                                .font(.title)
-                        }
+                HStack {
+                    switch viewModel.dataType {
+                    case .car:
+                        Text("Samochody")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .padding(.leading, 30)
+                            .padding(.bottom, -5)
+                        Spacer()
+                    case .motorcycle:
+                        Text("Motocykle")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .padding(.leading, 30)
+                            .padding(.bottom, -5)
+                        Spacer()
+                    case .utility:
+                        Text("Ciężarówki")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .padding(.leading, 30)
+                            .padding(.bottom, -5)
+                        Spacer()
+                    case .client:
+                        Text("Klienci")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .padding(.leading, 30)
+                            .padding(.bottom, -5)
+                        Spacer()
+                    case .rent:
+                        Text("Wypożyczone")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .padding(.leading, 30)
+                            .padding(.bottom, -5)
+                        Spacer()
                     }
+                }
+                Form {
                     Section {
                         List($viewModel.dataRows, id: \.id) { item in
                             VStack(alignment: .leading) {
