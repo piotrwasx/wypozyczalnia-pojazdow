@@ -139,6 +139,6 @@ struct DetailsView: View {
 
 struct DetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView(dataType: .utility, id: 3)
+        DetailsView(dataType: .car, id: 3)
     }
 }

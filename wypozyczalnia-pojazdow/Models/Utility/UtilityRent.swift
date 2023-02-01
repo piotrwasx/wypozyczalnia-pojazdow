@@ -20,4 +20,13 @@ struct UtilityRent: Codable {
         self.rent_end = ""
         self.rent_insurance = false
     }
+    
+    init(client_id: Int, utility_id: Int, rent_start: String, rent_end: String, rent_insurance: Bool) {
+        self.id = 0
+        self.client_id = client_id
+        self.utility_id = utility_id
+        self.rent_start = rent_start
+        self.rent_end = rent_end
+        self.rent_insurance = rent_insurance
+    }
 }

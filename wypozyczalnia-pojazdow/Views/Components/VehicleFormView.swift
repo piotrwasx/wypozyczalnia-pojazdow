@@ -50,13 +50,25 @@ struct VehicleFormView: View {
                     TextField("Marka *", text: $brand)
                     TextField("Typ nadwozia *", text: $type)
                     TextField("Rodzaj paliwa *", text: $motor)
-                    TextField("przebieg [km] *", value: $mileage, format: .number)
-                        .keyboardType(.numberPad)
                     if (dataType == .car || dataType == .utility) {
                         TextField("rodzaj skrzyni biegów *", text: $transmission)
                     }
+                } header: {
+                    Text("dane")
+                }
+                Section {
+                    TextField("przebieg [km] *", value: $mileage, format: .number)
+                        .keyboardType(.numberPad)
+                } header: {
+                    Text("przebieg")
+                }
+                Section {
                     TextField("cena *", value: $price, format: .number)
-                    Picker("", selection: $productionDate) {
+                } header: {
+                    Text("stawka w pln")
+                }
+                Section {
+                    Picker("rok produkcji:", selection: $productionDate) {
                         ForEach(2000...2023, id: \.self) {
                             Text(String($0))
                         }

@@ -20,12 +20,18 @@ struct CarForm: View {
                 Section {
                     TextField("marka:", text: $car.car_brand)
                     TextField("model:", text: $car.car_model)
-                    Text("id: \($car.wrappedValue.id)")
                     TextField("rodzaj paliwa:", text: $car.car_motor)
                     TextField("cena:", value: $car.car_rent_price_pln, formatter: NumberFormatter())
                     TextField("skrzynia biegów:", text: $car.car_transmission)
                     TextField("typ nadwozia:", text: $car.car_body_type)
+                } header: {
+                    Text("dane (kliknij, aby edytować)")
                 }
+            Section {
+                Text("\($car.wrappedValue.id)")
+            } header: {
+                Text("id pojazdu")
+            }
         }
     }
 }

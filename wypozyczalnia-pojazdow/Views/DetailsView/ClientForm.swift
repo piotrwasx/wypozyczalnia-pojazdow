@@ -27,6 +27,7 @@ struct ClientForm: View {
                 Text("id klienta: \($client.wrappedValue.id)")
                 TextField("e-mail", text: $client.client_email ?? "")
                 TextField("adres:", text: $client.client_address)
+                TextField("adres:", text: $client.client_street_nr)
                 TextField("miasto:", text: $client.client_city)
                 TextField("numer telefonu:", text: $client.client_phone_nr)
                 TextField("data wydania prawa jazdy:", text: $client.client_driving_license_since)

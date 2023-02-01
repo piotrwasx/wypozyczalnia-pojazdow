@@ -7,6 +7,13 @@
 
 import Foundation
 
+extension Sequence where Iterator.Element: Hashable {
+    func unique() -> [Iterator.Element] {
+        var seen: Set<Iterator.Element> = []
+        return filter { seen.insert($0).inserted }
+    }
+}
+
 final class ListViewModel: ObservableObject {
     
     var dataType: DataTypes
@@ -58,18 +65,18 @@ final class ListViewModel: ObservableObject {
                     for item in response {
                         self.dataRows.append(DataListViewRow(id: item.id, title: "\(item.car_model) \(item.car_brand)", dataType: .car))
                     }
-                }}
-            NetworkController.fetchData(url: "http://127.0.0.1:5000/api/rented/motorcycles", dataType: [MotorcycleTitle].self) { response in
-                DispatchQueue.main.async {
-                    for item in response {
-                        self.dataRows.append(DataListViewRow(id: item.id, title: "\(item.motorcycle_model) \(item.motorcycle_brand)", dataType: .motorcycle))
-                    }
-                }}
-            NetworkController.fetchData(url: "http://127.0.0.1:5000/api/rented/utilities", dataType: [UtilityTitle].self) { response in
-                DispatchQueue.main.async {
-                    for item in response {
-                        self.dataRows.append(DataListViewRow(id: item.id, title: "\(item.utility_model) \(item.utility_brand)", dataType: .utility))
-                    }
+                    NetworkController.fetchData(url: "http://127.0.0.1:5000/api/rented/motorcycles", dataType: [MotorcycleTitle].self) { response in
+                        DispatchQueue.main.async {
+                            for item in response {
+                                self.dataRows.append(DataListViewRow(id: item.id, title: "\(item.motorcycle_model) \(item.motorcycle_brand)", dataType: .motorcycle))
+                            }
+                            NetworkController.fetchData(url: "http://127.0.0.1:5000/api/rented/utilities", dataType: [UtilityTitle].self) { response in
+                                DispatchQueue.main.async {
+                                    for item in response {
+                                        self.dataRows.append(DataListViewRow(id: item.id, title: "\(item.utility_model) \(item.utility_brand)", dataType: .utility))
+                                    }
+                                }}
+                        }}
                 }}
         }
     }
@@ -77,13 +84,13 @@ final class ListViewModel: ObservableObject {
     func deleteData(id: Int, dataType: DataTypes) async -> String {
         switch dataType {
         case .client:
-            return await NetworkController.deleteData(url: "http://127.0.0.1:5000/api/clients/\(id)")
+            return await NetworkController.changeAvailability(url: "http://127.0.0.1:5000/api/clients/\(id)")
         case .utility:
-            return await NetworkController.deleteData(url: "http://127.0.0.1:5000/api/utilities/\(id)")
+            return await NetworkController.changeAvailability(url: "http://127.0.0.1:5000/api/utilities/\(id)")
         case .motorcycle:
-            return await NetworkController.deleteData(url: "http://127.0.0.1:5000/api/motorcycles/\(id)")
+            return await NetworkController.changeAvailability(url: "http://127.0.0.1:5000/api/motorcycles/\(id)")
         case .car:
-            return await NetworkController.deleteData(url: "http://127.0.0.1:5000/api/cars/\(id)")
+            return await NetworkController.changeAvailability(url: "http://127.0.0.1:5000/api/cars/\(id)")
         default:
             return "Zły typ danych"
         }

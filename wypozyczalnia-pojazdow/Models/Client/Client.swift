@@ -9,7 +9,7 @@ import Foundation
 
 struct Client: Codable {
     var id: Int
-    var client_name, client_surname, client_address, client_city, client_phone_nr: String
+    var client_name, client_surname, client_address, client_street_nr, client_city, client_phone_nr: String
     var client_email: String?
     var client_driving_license_since: String
     
@@ -18,6 +18,7 @@ struct Client: Codable {
         self.client_name = ""
         self.client_surname = ""
         self.client_address = ""
+        self.client_street_nr = ""
         self.client_city = ""
         self.client_phone_nr = ""
         self.client_email = ""
@@ -25,10 +26,10 @@ struct Client: Codable {
     }
 
     func isClientDataValid(client: Client) -> Bool {
-        if client.client_surname.isEmpty || client.client_name.isEmpty || client.client_address.isEmpty || client.client_city.isEmpty || client.client_driving_license_since.isEmpty || client.client_phone_nr.isEmpty {
+        if client.client_surname.isEmpty || client.client_name.isEmpty || client.client_address.isEmpty || client.client_street_nr.isEmpty || client.client_city.isEmpty || client.client_driving_license_since.isEmpty || client.client_phone_nr.isEmpty {
             return false
         }
-        if client.client_name.isNumber || client.client_surname.isNumber || client.client_address.isNumber || client.client_city.isNumber {
+        if client.client_name.isNumber || client.client_surname.isNumber || client.client_address.isNumber || client.client_street_nr.isNumber || client.client_city.isNumber {
             return false
         }
         if client.client_email != nil {

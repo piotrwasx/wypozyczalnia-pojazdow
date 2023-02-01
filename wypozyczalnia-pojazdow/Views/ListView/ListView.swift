@@ -25,10 +25,16 @@ struct ListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                if viewModel.dataType != .rent {
+                if viewModel.dataType == .rent {
+                    NavigationLink(destination: NewRentForm()) {
+                        Label("", systemImage: "plus")
+                        }
+                    .frame(height: 30)
+                    .frame(maxWidth: UIScreen.main.bounds.width - 40, alignment: .trailing)
+                } else {
                     NavigationLink(destination: AddItemView(dataType: viewModel.dataType)) {
                         Label("", systemImage: "plus")
-                    }
+                        }
                     .frame(height: 30)
                     .frame(maxWidth: UIScreen.main.bounds.width - 40, alignment: .trailing)
                 }
