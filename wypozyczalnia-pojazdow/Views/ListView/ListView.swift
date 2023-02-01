@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-protocol ListViewRow {
-    var id: Int { get }
-    var title: String { get }
-    var dataType: DataTypes { get }
-}
-
 struct ListView: View {
     
     @ObservedObject var viewModel: ListViewModel
@@ -25,19 +19,11 @@ struct ListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                if viewModel.dataType == .rent {
-                    NavigationLink(destination: NewRentForm()) {
-                        Label("", systemImage: "plus")
-                        }
-                    .frame(height: 30)
-                    .frame(maxWidth: UIScreen.main.bounds.width - 40, alignment: .trailing)
-                } else {
-                    NavigationLink(destination: AddItemView(dataType: viewModel.dataType)) {
-                        Label("", systemImage: "plus")
-                        }
-                    .frame(height: 30)
-                    .frame(maxWidth: UIScreen.main.bounds.width - 40, alignment: .trailing)
-                }
+                NavigationLink(destination: AddItemView(dataType: viewModel.dataType)) {
+                    Label("", systemImage: "plus")
+                    }
+                .frame(height: 30)
+                .frame(maxWidth: UIScreen.main.bounds.width - 40, alignment: .trailing)
                 HStack {
                     switch viewModel.dataType {
                     case .car:
@@ -69,7 +55,7 @@ struct ListView: View {
                             .padding(.bottom, -5)
                         Spacer()
                     case .rent:
-                        Text("Wypożyczone")
+                        Text("")
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .padding(.leading, 30)
@@ -81,23 +67,17 @@ struct ListView: View {
                     Section {
                         List($viewModel.dataRows, id: \.id) { item in
                             VStack(alignment: .leading) {
-                                if viewModel.dataType == .rent {
-                                    NavigationLink(destination: RentedView(dataType: item.wrappedValue.dataType, id: item.wrappedValue.id)) {
-                                        Text(item.wrappedValue.title)
-                                    }
-                                } else {
-                                    NavigationLink(destination: DetailsView(dataType: item.wrappedValue.dataType, id: item.wrappedValue.id)) {
-                                        Text(item.wrappedValue.title)
-                                            .swipeActions {
-                                                if viewModel.dataType != .client {
-                                                    Button("Usuń") {
-                                                        showConfirmationAlert = true
-                                                        idToDelete = item.wrappedValue.id
-                                                    }
-                                                    .tint(.red)
+                                NavigationLink(destination: DetailsView(dataType: item.wrappedValue.dataType, id: item.wrappedValue.id)) {
+                                    Text(item.wrappedValue.title)
+                                        .swipeActions {
+                                            if viewModel.dataType != .client {
+                                                Button("Usuń") {
+                                                    showConfirmationAlert = true
+                                                    idToDelete = item.wrappedValue.id
                                                 }
+                                                .tint(.red)
                                             }
-                                    }
+                                        }
                                 }
                             }
                         }
@@ -129,6 +109,6 @@ struct ListView: View {
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView(viewModel: ListViewModel(dataType: .rent))
+        ListView(viewModel: ListViewModel(dataType: .car))
     }
 }

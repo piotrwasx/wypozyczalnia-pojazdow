@@ -26,7 +26,7 @@ final class DetailsViewModel: ObservableObject {
     
     var urls = ["clients": "http://127.0.0.1:5000/api/clients/", "motorcycles": "http://127.0.0.1:5000/api/motorcycles/", "cars": "http://127.0.0.1:5000/api/cars/", "utilities": "http://127.0.0.1:5000/api/utilities/"]
     
-    func loadInfo(id: Int, dataType: DataTypes) {
+    func loadData(id: Int, dataType: DataTypes) {
         switch dataType {
         case .car:
             NetworkController.fetchData(url: "http://127.0.0.1:5000/api/cars/\(id)", dataType: [Car].self) { response in

@@ -44,12 +44,12 @@ struct NewRentForm: View {
                 Section {
                     Picker("Kto:", selection: $client_id) {
                         ForEach($viewModel.clientDataRows, id: \.id) { item in
-                            Text("\(String(item.wrappedValue.id)) - \(item.wrappedValue.title)")
+                            Text(item.wrappedValue.toString())
                         }
                     }
                     Picker("Co:", selection: $id) {
                         ForEach($viewModel.vehicleDataRows, id: \.id) { item in
-                            Text("\(String(item.wrappedValue.id)) - \(item.wrappedValue.title)")
+                            Text(item.wrappedValue.toString())
                         }
                     }
                 } header: {

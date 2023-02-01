@@ -123,7 +123,7 @@ struct RentedView: View {
             }
         }
         .onAppear {
-            viewModel.loadInfo(id: id, dataType: dataType)
+            viewModel.loadData(id: id, dataType: dataType)
             viewModel.loadRentHistory(id: id, dataType: dataType)
         }
         .alert("Powiadomienie", isPresented: $showingConfirmation) {}
