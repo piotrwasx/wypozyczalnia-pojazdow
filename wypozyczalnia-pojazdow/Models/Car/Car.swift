@@ -48,7 +48,7 @@ struct Car: Codable {
         if self.car_brand.isNumber || self.car_model.isNumber || self.car_body_type.isNumber || self.car_motor.isNumber || self.car_transmission.isNumber  {
             return false
         }
-        if self.car_year < 0 || self.car_mileage_km < 0 || self.car_rent_price_pln < 0 {
+        if self.car_year < 1900 || self.car_mileage_km < 0 || self.car_rent_price_pln < 0 {
             return false
         }
         return true
