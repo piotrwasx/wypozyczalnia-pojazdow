@@ -41,11 +41,14 @@ struct Car: Codable {
         self.car_availability = true
     }
     
-    func isCarDataValid(car: Car) -> Bool {
-        if car.car_brand.isEmpty || car.car_model.isEmpty || car.car_body_type.isEmpty || car.car_motor.isEmpty || car.car_transmission.isEmpty {
+    func isCarDataValid() -> Bool {
+        if self.car_brand.isEmpty || self.car_model.isEmpty || self.car_body_type.isEmpty || self.car_motor.isEmpty || self.car_transmission.isEmpty {
             return false
         }
-        if car.car_brand.isNumber || car.car_model.isNumber || car.car_body_type.isNumber || car.car_motor.isNumber || car.car_transmission.isNumber  {
+        if self.car_brand.isNumber || self.car_model.isNumber || self.car_body_type.isNumber || self.car_motor.isNumber || self.car_transmission.isNumber  {
+            return false
+        }
+        if self.car_year < 0 || self.car_mileage_km < 0 || self.car_rent_price_pln < 0 {
             return false
         }
         return true

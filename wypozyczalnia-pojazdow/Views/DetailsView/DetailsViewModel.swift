@@ -84,7 +84,7 @@ final class DetailsViewModel: ObservableObject {
     }
     
     func update(car: Car) -> Bool {
-        if car.isCarDataValid(car: car) {
+        if car.isCarDataValid() {
             Task {
                 await NetworkController.alterData(url: urls["cars"]!, dataToSend: car)
             }
@@ -94,7 +94,7 @@ final class DetailsViewModel: ObservableObject {
     }
     
     func update(motorcycle: Motorcycle) -> Bool {
-        if motorcycle.isMotorcycleDataValid(motorcycle: motorcycle) {
+        if motorcycle.isMotorcycleDataValid() {
             Task {
                 await NetworkController.alterData(url: urls["motorcycles"]!, dataToSend: motorcycle)
             }
@@ -104,7 +104,7 @@ final class DetailsViewModel: ObservableObject {
     }
     
     func update(utility: Utility) -> Bool {
-        if utility.isUtilityDataValid(utility: utility) {
+        if utility.isUtilityDataValid() {
             Task {
                  await NetworkController.alterData(url: urls["utilities"]!, dataToSend: utility)
             }
@@ -114,7 +114,7 @@ final class DetailsViewModel: ObservableObject {
     }
     
     func update(client: Client) -> Bool {
-        if client.isClientDataValid(client: client) {
+        if client.isClientDataValid() {
             Task {
                 await NetworkController.alterData(url: urls["clients"]!, dataToSend: client) 
             }

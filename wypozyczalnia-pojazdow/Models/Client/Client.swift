@@ -24,16 +24,17 @@ struct Client: Codable {
         self.client_email = ""
         self.client_driving_license_since = ""
     }
+    
 
-    func isClientDataValid(client: Client) -> Bool {
-        if client.client_surname.isEmpty || client.client_name.isEmpty || client.client_address.isEmpty || client.client_street_nr.isEmpty || client.client_city.isEmpty || client.client_driving_license_since.isEmpty || client.client_phone_nr.isEmpty {
+    func isClientDataValid() -> Bool {
+        if self.client_surname.isEmpty || self.client_name.isEmpty || self.client_address.isEmpty || self.client_street_nr.isEmpty || self.client_city.isEmpty || self.client_driving_license_since.isEmpty || self.client_phone_nr.isEmpty {
             return false
         }
-        if client.client_name.isNumber || client.client_surname.isNumber || client.client_address.isNumber || client.client_city.isNumber {
+        if self.client_name.isNumber || self.client_surname.isNumber || self.client_address.isNumber || self.client_city.isNumber {
             return false
         }
-        if client.client_email != nil {
-            if client.client_email!.isValidEmail() {
+        if self.client_email != nil {
+            if self.client_email!.isValidEmail() {
                 return true
             } else {
                 return false

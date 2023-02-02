@@ -41,11 +41,14 @@ struct Utility: Codable {
         self.utility_availability = true
     }
     
-    func isUtilityDataValid(utility: Utility) -> Bool {
-        if utility.utility_brand.isEmpty || utility.utility_model.isEmpty || utility.utility_type.isEmpty || utility.utility_motor.isEmpty || utility.utility_transmission.isEmpty {
+    func isUtilityDataValid() -> Bool {
+        if self.utility_brand.isEmpty || self.utility_model.isEmpty || self.utility_type.isEmpty || self.utility_motor.isEmpty || self.utility_transmission.isEmpty {
             return false
         }
-        if utility.utility_brand.isNumber || utility.utility_model.isNumber || utility.utility_type.isNumber || utility.utility_motor.isNumber || utility.utility_transmission.isNumber  {
+        if self.utility_brand.isNumber || self.utility_model.isNumber || self.utility_type.isNumber || self.utility_motor.isNumber || self.utility_transmission.isNumber  {
+            return false
+        }
+        if self.utility_year < 1900 || self.utility_mileage_km < 0 || self.utility_rent_price_pln < 0 {
             return false
         }
         return true

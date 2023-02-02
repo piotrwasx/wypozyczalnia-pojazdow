@@ -15,7 +15,7 @@ final class AddItemViewModel: ObservableObject {
     var urls = ["clients": "http://127.0.0.1:5000/api/clients/", "motorcycles": "http://127.0.0.1:5000/api/motorcycles/", "cars": "http://127.0.0.1:5000/api/cars/", "utilities": "http://127.0.0.1:5000/api/utilities/"]
     
     func processData(car: Car) -> Bool {
-        if car.isCarDataValid(car: car) {
+        if car.isCarDataValid() {
             Task {
                 await postNewCar(url: urls["cars"]!, car: car)
             }
@@ -25,7 +25,7 @@ final class AddItemViewModel: ObservableObject {
     }
     
     func processData(motorcycle: Motorcycle) -> Bool {
-        if motorcycle.isMotorcycleDataValid(motorcycle: motorcycle) {
+        if motorcycle.isMotorcycleDataValid() {
             Task {
                 await postNewMotorcycle(url: urls["motorcycles"]!, motorcycle: motorcycle)
             }
@@ -35,7 +35,7 @@ final class AddItemViewModel: ObservableObject {
     }
     
     func processData(utility: Utility) -> Bool {
-        if utility.isUtilityDataValid(utility: utility) {
+        if utility.isUtilityDataValid() {
             Task {
                 await postNewUtility(url: urls["utilities"]!, utility: utility)
             }
@@ -45,7 +45,7 @@ final class AddItemViewModel: ObservableObject {
     }
     
     func processData(client: Client) -> Bool {
-        if client.isClientDataValid(client: client) {
+        if client.isClientDataValid() {
             Task {
                 await postNewClient(url: urls["clients"]!, client: client)
             }

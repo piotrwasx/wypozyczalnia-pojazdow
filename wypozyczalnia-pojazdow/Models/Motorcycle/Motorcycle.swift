@@ -39,11 +39,14 @@ struct Motorcycle: Codable {
         self.motorcycle_availability = true
     }
     
-    func isMotorcycleDataValid(motorcycle: Motorcycle) -> Bool {
-        if motorcycle.motorcycle_brand.isEmpty || motorcycle.motorcycle_model.isEmpty || motorcycle.motorcycle_body_type.isEmpty || motorcycle.motorcycle_motor.isEmpty {
+    func isMotorcycleDataValid() -> Bool {
+        if self.motorcycle_brand.isEmpty || self.motorcycle_model.isEmpty || self.motorcycle_body_type.isEmpty || self.motorcycle_motor.isEmpty {
             return false
         }
-        if motorcycle.motorcycle_brand.isNumber || motorcycle.motorcycle_model.isNumber || motorcycle.motorcycle_body_type.isNumber || motorcycle.motorcycle_motor.isNumber {
+        if self.motorcycle_brand.isNumber || self.motorcycle_model.isNumber || self.motorcycle_body_type.isNumber || self.motorcycle_motor.isNumber {
+            return false
+        }
+        if self.motorcycle_year < 1900 || self.motorcycle_mileage_km < 0 || self.motorcycle_rent_price_pln < 0 {
             return false
         }
         return true
