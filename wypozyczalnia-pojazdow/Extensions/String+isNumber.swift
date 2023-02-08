@@ -8,6 +8,7 @@
 import Foundation
 
 extension String {
+    /// checks if provided string is a number
     var isNumber: Bool {
         return self.range(
             of: "^[0-9]*$", 

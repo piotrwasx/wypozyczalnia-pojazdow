@@ -7,9 +7,10 @@
 
 import SwiftUI
 
+/// A view of specific, currently rented vehicle
 struct RentedView: View {
     
-    let dataType: DataTypes
+    let dataType: DataType
     let id: Int
     
     @StateObject var viewModel = DetailsViewModel()

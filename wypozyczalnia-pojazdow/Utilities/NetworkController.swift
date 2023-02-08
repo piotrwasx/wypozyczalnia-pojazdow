@@ -7,7 +7,12 @@
 
 import Foundation
 
+/// A structure to control a network request
 struct NetworkController {
+    /// fetching the data from database
+    /// - Parameters:
+    ///   - url: API url to send a GET request
+    ///   - dataType: expected type of data
     static func fetchData<T: Codable>(url: String, dataType: T.Type, completion: @escaping ((T) -> Void)) {
         if let url = URL(string: url) {
             URLSession.shared.dataTask(with: url) { data, _, error in
@@ -23,6 +28,11 @@ struct NetworkController {
         }
     }
     
+    ///  A method to send the data into database
+    /// - Parameters:
+    ///   - url: API url to send a POST request
+    ///   - dataToSend: expected type of data
+    /// - Returns: returns status message
     static func sendData<T: Codable>(url: String, dataToSend: T) async -> String {
         if let url = URL(string: url) {
             guard let encoded = try? JSONEncoder().encode(dataToSend) else {
@@ -41,7 +51,12 @@ struct NetworkController {
         }
         return "Wystąpił błąd połączenia"
     }
-        
+    
+    /// A method to update the data into database
+    /// - Parameters:
+    ///   - url: API url to send a PUT request
+    ///   - dataToSend: expected type of data
+    /// - Returns: returns status message
     static func alterData<T: Codable>(url: String, dataToSend: T) async -> String {
         if let url = URL(string: url) {
             guard let encoded = try? JSONEncoder().encode(dataToSend) else {
@@ -61,6 +76,9 @@ struct NetworkController {
         return "Wystąpił błąd połączenia"
     }
     
+    /// A method to change availability of an item, for example: when the car is not for rent anymore
+    /// - Parameter url: API url to send a PUT request
+    /// - Returns: returns status message
     static func changeAvailability(url: String) async -> String {
             if let url = URL(string: url) {
                 var request = URLRequest(url: url)
@@ -81,7 +99,10 @@ struct NetworkController {
 
 extension NetworkController {
     
-    func loadTitles(dataType: DataTypes) -> [DataListViewRow] {
+    /// Fetch titles of specific data type from API
+    /// - Parameter dataType: type of data to fetch
+    /// - Returns: returns ''DataListViewRow'' type array
+    func loadTitles(dataType: DataType) -> [DataListViewRow] {
         
         var dataRows: [DataListViewRow] = []
         

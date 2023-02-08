@@ -39,6 +39,8 @@ struct Motorcycle: Codable {
         self.motorcycle_availability = true
     }
     
+    /// Checks if provided motorcycle data is valid
+    /// - Returns: returns boolean
     func isMotorcycleDataValid() -> Bool {
         if self.motorcycle_brand.isEmpty || self.motorcycle_model.isEmpty || self.motorcycle_body_type.isEmpty || self.motorcycle_motor.isEmpty {
             return false

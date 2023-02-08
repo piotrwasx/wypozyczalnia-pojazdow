@@ -9,6 +9,8 @@ import Foundation
 
 final class DetailsViewModel: ObservableObject {
     
+    //TODO: change this class properites and methods into generic to reduce the code
+    
     @Published var car = [Car]()
     @Published var carRentHistory = [CarRent]()
     
@@ -24,9 +26,14 @@ final class DetailsViewModel: ObservableObject {
     @Published var confirmationMessage = ""
     @Published var showingConfirmation = false
     
+    /// An array of urls to fetch data of specific type/
     var urls = ["clients": "http://127.0.0.1:5000/api/clients/", "motorcycles": "http://127.0.0.1:5000/api/motorcycles/", "cars": "http://127.0.0.1:5000/api/cars/", "utilities": "http://127.0.0.1:5000/api/utilities/"]
     
-    func loadData(id: Int, dataType: DataTypes) {
+    /// This function fetch detaild data of specific item by its ID from API
+    /// - Parameters:
+    ///   - id: id of specific item to load data
+    ///   - dataType: type of data to fetch from API
+    func loadData(id: Int, dataType: DataType) {
         switch dataType {
         case .car:
             NetworkController.fetchData(url: "http://127.0.0.1:5000/api/cars/\(id)", dataType: [Car].self) { response in
@@ -56,7 +63,11 @@ final class DetailsViewModel: ObservableObject {
         }
     }
     
-    func loadRentHistory(id: Int, dataType: DataTypes) {
+    /// This function fetch  renting history data of specific item by its ID from API
+    /// - Parameters:
+    ///   - id: id of specific item to load data
+    ///   - dataType: type of data to fetch from API
+    func loadRentHistory(id: Int, dataType: DataType) {
         switch dataType {
         case .car:
             NetworkController.fetchData(url: "http://127.0.0.1:5000/api/carsrenting/byCar?id=\(id)", dataType: [CarRent].self) { response in

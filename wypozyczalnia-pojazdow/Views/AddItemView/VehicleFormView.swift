@@ -7,14 +7,16 @@
 
 import SwiftUI
 
+/// A form to add a new vehicle
 struct VehicleFormView: View {
     
-    @ObservedObject var viewModel: AddItemViewModel
-    let dataType: DataTypes
+    /// enumerated type of data to handle by the view
+    let dataType: DataType
     
     @Binding var showingConfirmation: Bool
     @Binding var confirmationMessage: String
     
+    @ObservedObject var viewModel = AddItemViewModel()
     @State var model = ""
     @State var brand = ""
     @State var type = ""
@@ -80,7 +82,7 @@ struct VehicleFormView: View {
                     case .car:
                         let car = Car(car_brand: brand, car_model: model, car_year: productionDate, car_mileage_km: mileage, car_transmission: transmission, car_motor: motor, car_body_type: type, car_rent_price_pln: price)
                         
-                        if viewModel.processData(car: car) {
+                        if viewModel.validateAndSendData(data: car) {
                             confirmationMessage = "Dodano nowy samochód"
                         } else {
                             confirmationMessage = "Niepowodzenie"
@@ -88,7 +90,7 @@ struct VehicleFormView: View {
                         showingConfirmation = true
                     case .motorcycle:
                         let motorcycle = Motorcycle(motorcycle_model: model, motorcycle_brand: brand, motorcycle_year: productionDate, motorcycle_mileage_km: mileage, motorcycle_motor: motor, motorcycle_body_type: type, motorcycle_rent_price_pln: price)
-                        if viewModel.processData(motorcycle: motorcycle) {
+                        if viewModel.validateAndSendData(data: motorcycle) {
                             confirmationMessage = "Dodano nowy motocykl"
                         } else {
                             confirmationMessage = "Niepowodzenie"
@@ -96,7 +98,7 @@ struct VehicleFormView: View {
                         showingConfirmation = true
                     case .utility:
                         let utility = Utility(utility_brand: brand, utility_model: model, utility_year: productionDate, utility_mileage_km: mileage, utility_transmission: transmission, utility_motor: motor, utility_type: type, utility_rent_price_pln: price)
-                        if viewModel.processData(utility: utility) {
+                        if viewModel.validateAndSendData(data: utility) {
                             confirmationMessage = "Dodano nową ciężarówkę"
                         } else {
                             confirmationMessage = "Niepowodzenie"
@@ -114,6 +116,6 @@ struct VehicleFormView: View {
 
 struct VehicleForm_Previews: PreviewProvider {
     static var previews: some View {
-        VehicleFormView(viewModel: AddItemViewModel(), dataType: .utility, showingConfirmation: .constant(false), confirmationMessage: .constant(""))
+        VehicleFormView(dataType: .utility, showingConfirmation: .constant(false), confirmationMessage: .constant(""))
     }
 }

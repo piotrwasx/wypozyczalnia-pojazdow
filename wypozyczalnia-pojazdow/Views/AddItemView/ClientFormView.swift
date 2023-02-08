@@ -7,13 +7,13 @@
 
 import SwiftUI
 
+/// A form to add a new ''Client''
 struct ClientFormView: View {
-    
-    @ObservedObject var viewModel: AddItemViewModel
     
     @Binding var showingConfirmation: Bool
     @Binding var confirmationMessage: String
     
+    @ObservedObject var viewModel = AddItemViewModel()
     @State private var client = Client()
     @State private var selectedDate = Date()
     @State private var email: String = ""
@@ -45,7 +45,7 @@ struct ClientFormView: View {
                 Button("Zatwierdź dane") {
                     client.client_driving_license_since = dateFormatter.string(from: $selectedDate.wrappedValue)
                     client.client_email = $email.wrappedValue
-                    if viewModel.processData(client: client) {
+                    if viewModel.validateAndSendData(data: client) {
                         confirmationMessage = "Dodano nowego klienta"
                     } else {
                         confirmationMessage = "Niepowodzenie"
@@ -59,6 +59,6 @@ struct ClientFormView: View {
 
 struct ClientFormView_Previews: PreviewProvider {
     static var previews: some View {
-        ClientFormView(viewModel: AddItemViewModel(), showingConfirmation: .constant(false), confirmationMessage: .constant(""))
+        ClientFormView(showingConfirmation: .constant(false), confirmationMessage: .constant(""))
     }
 }

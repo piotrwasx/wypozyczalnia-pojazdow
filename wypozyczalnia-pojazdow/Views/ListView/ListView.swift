@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// A view with data listed each inside ''ListViewRow''
 struct ListView: View {
     
     @ObservedObject var viewModel: ListViewModel

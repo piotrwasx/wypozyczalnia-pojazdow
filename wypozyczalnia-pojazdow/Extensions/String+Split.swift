@@ -8,6 +8,8 @@
 import Foundation
 
 extension String {
+    /// this method cuts a String of Date into more readable format
+    /// - Returns: returns new String
     func formatDateTime() -> String{
         return self.split(separator: "T").map { String($0) }[0]
     }

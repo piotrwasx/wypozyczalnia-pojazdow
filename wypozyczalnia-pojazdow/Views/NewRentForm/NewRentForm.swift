@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// A view of adding a new rent to database
 struct NewRentForm: View {
     
     @ObservedObject var viewModel = NewRentFormModel()
@@ -14,7 +15,7 @@ struct NewRentForm: View {
     @State var showingConfirmation = false
     @State var confirmationMessage = ""
     
-    @State var vehicleTypes: VehicleTypes = .car
+    @State var vehicleTypes: VehicleType = .car
     @State var client_id = 1
     @State var id = 1
     @State var price = 0
@@ -34,7 +35,7 @@ struct NewRentForm: View {
                 
                 Section {
                     Picker("", selection: $vehicleTypes) {
-                        ForEach(VehicleTypes.allCases, id: \.self) { item in
+                        ForEach(VehicleType.allCases, id: \.self) { item in
                             Text("\(item.rawValue)")
                         }
                     }
@@ -69,14 +70,14 @@ struct NewRentForm: View {
                     case .car:
                         let car = CarRent(client_id: $client_id.wrappedValue, car_id: $id.wrappedValue, rent_start: dateFormatter.string(from: rent_start), rent_end: dateFormatter.string(from: $rent_end.wrappedValue), rent_insurance: $rent_insurance.wrappedValue)
                         Task {
-                            await viewModel.processData(carRent: car)
+                            await viewModel.sendData(newRent: car)
                             confirmationMessage = "Przesłano dane"
                             showingConfirmation = true
                         }
                     case .motorcycle:
                         let motorcycle = MotorcycleRent(client_id: $client_id.wrappedValue, motorcycle_id: $id.wrappedValue, rent_start: dateFormatter.string(from: rent_start), rent_end: dateFormatter.string(from: $rent_end.wrappedValue), rent_insurance: $rent_insurance.wrappedValue)
                         Task {
-                            await viewModel.processData(motorcycleRent: motorcycle)
+                            await viewModel.sendData(newRent: motorcycle)
                             confirmationMessage = "Przesłano dane"
                             showingConfirmation = true
                         }
@@ -84,7 +85,7 @@ struct NewRentForm: View {
                         let utility = UtilityRent(client_id: $client_id.wrappedValue, utility_id: $id.wrappedValue, rent_start: dateFormatter.string(from: rent_start), rent_end: dateFormatter.string(from: $rent_end.wrappedValue), rent_insurance: $rent_insurance.wrappedValue)
                         
                         Task {
-                            await viewModel.processData(utilityRent: utility)
+                            await viewModel.sendData(newRent: utility)
                             confirmationMessage = "Dodano nową ciężarówkę"
                             showingConfirmation = true
                         }

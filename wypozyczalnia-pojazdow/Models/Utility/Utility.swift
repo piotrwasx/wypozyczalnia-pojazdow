@@ -41,6 +41,8 @@ struct Utility: Codable {
         self.utility_availability = true
     }
     
+    /// Checks if provided utility data is valid
+    /// - Returns: returns boolean
     func isUtilityDataValid() -> Bool {
         if self.utility_brand.isEmpty || self.utility_model.isEmpty || self.utility_type.isEmpty || self.utility_motor.isEmpty || self.utility_transmission.isEmpty {
             return false

@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum DataTypes {
+enum DataType {
     case car, motorcycle, utility, client, rent
 }
 
-enum VehicleTypes: String, Equatable, CaseIterable {
+enum VehicleType: String, Equatable, CaseIterable {
     case car = "Samochód"
     case motorcycle = "Motocykl"
     case utility = "Ciężarówka"

@@ -41,6 +41,8 @@ struct Car: Codable {
         self.car_availability = true
     }
     
+    /// Checks if provided car data is valid
+    /// - Returns: returns boolean
     func isCarDataValid() -> Bool {
         if self.car_brand.isEmpty || self.car_model.isEmpty || self.car_body_type.isEmpty || self.car_motor.isEmpty || self.car_transmission.isEmpty {
             return false

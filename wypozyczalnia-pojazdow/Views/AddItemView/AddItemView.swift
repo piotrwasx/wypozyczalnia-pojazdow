@@ -7,9 +7,11 @@
 
 import SwiftUI
 
+/// A view with forms to add new records to database
 struct AddItemView: View {
     
-    let dataType: DataTypes
+    /// enumerated type of data to handle by the view
+    let dataType: DataType
     
     @State private var showConfirmationAlert = false
     @State private var confirmationMessage = ""
@@ -18,15 +20,15 @@ struct AddItemView: View {
         VStack {
             switch dataType {
             case .client:
-                ClientFormView(viewModel: AddItemViewModel(), showingConfirmation: $showConfirmationAlert, confirmationMessage: $confirmationMessage)
+                ClientFormView(showingConfirmation: $showConfirmationAlert, confirmationMessage: $confirmationMessage)
             case .utility:
-                VehicleFormView(viewModel: AddItemViewModel(), dataType: .utility, showingConfirmation: $showConfirmationAlert, confirmationMessage: $confirmationMessage)
+                VehicleFormView(dataType: .utility, showingConfirmation: $showConfirmationAlert, confirmationMessage: $confirmationMessage)
             case .motorcycle:
-                VehicleFormView(viewModel: AddItemViewModel(), dataType: .motorcycle, showingConfirmation: $showConfirmationAlert, confirmationMessage: $confirmationMessage)
+                VehicleFormView(dataType: .motorcycle, showingConfirmation: $showConfirmationAlert, confirmationMessage: $confirmationMessage)
             case .car:
-                VehicleFormView(viewModel: AddItemViewModel(), dataType: .car, showingConfirmation: $showConfirmationAlert, confirmationMessage: $confirmationMessage)
+                VehicleFormView(dataType: .car, showingConfirmation: $showConfirmationAlert, confirmationMessage: $confirmationMessage)
             case .rent:
-                VehicleFormView(viewModel: AddItemViewModel(), dataType: .rent, showingConfirmation: $showConfirmationAlert, confirmationMessage: $confirmationMessage)
+                VehicleFormView(dataType: .rent, showingConfirmation: $showConfirmationAlert, confirmationMessage: $confirmationMessage)
 
             }
         }

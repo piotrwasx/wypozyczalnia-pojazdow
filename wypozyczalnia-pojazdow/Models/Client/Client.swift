@@ -37,7 +37,9 @@ struct Client: Codable {
         self.client_driving_license_since = client_driving_license_since
     }
     
-
+    
+    /// Checks if provided client data is valid
+    /// - Returns: returns boolean
     func isClientDataValid() -> Bool {
         if self.client_surname.isEmpty || self.client_name.isEmpty || self.client_address.isEmpty || self.client_street_nr.isEmpty || self.client_city.isEmpty || self.client_driving_license_since.isEmpty || self.client_phone_nr.isEmpty {
             return false

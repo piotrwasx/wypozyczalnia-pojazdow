@@ -7,9 +7,12 @@
 
 import SwiftUI
 
+/// A detailed view of specific data, that was clicked on ''ListView''
 struct DetailsView: View {
     
-    let dataType: DataTypes
+    /// enumerated type of data to handle by the view
+    let dataType: DataType
+    /// an ID of clicked item in previous view
     let id: Int
     
     @StateObject var viewModel = DetailsViewModel()
@@ -23,18 +26,8 @@ struct DetailsView: View {
             case .car:
                 Form {
                     ForEach($viewModel.car, id: \.id) { result in
-                        CarForm(car: result.wrappedValue, confirmationMessage: $confirmationMessage, showingConfirmation: $showingConfirmation)
-                        Section {
-                            Button("Zapisz zmiany") {
-                                if viewModel.update(car: result.wrappedValue) {
-                                    confirmationMessage = "Zaktualizowano dane"
-                                    showingConfirmation = true
-                                } else {
-                                    confirmationMessage = "Niepowodzenie"
-                                    showingConfirmation = true
-                                }
-                            }
-                        }
+                        CarDetails(car: result.wrappedValue, confirmationMessage: $confirmationMessage, showingConfirmation: $showingConfirmation)
+                        
                         Section {
                             Text("Historia wypożyczeń")
                                 .fontWeight(.semibold)
@@ -47,18 +40,8 @@ struct DetailsView: View {
             case .motorcycle:
                 Form {
                     ForEach($viewModel.motorcycle, id: \.id) { result in
-                        MotorcycleForm(motorcycle: result.wrappedValue, confirmationMessage: $confirmationMessage, showingConfirmation: $showingConfirmation)
-                        Section {
-                            Button("Zapisz zmiany") {
-                                if viewModel.update(motorcycle: result.wrappedValue) {
-                                    confirmationMessage = "Zaktualizowano dane"
-                                    showingConfirmation = true
-                                } else {
-                                    confirmationMessage = "Niepowodzenie"
-                                    showingConfirmation = true
-                                }
-                            }
-                        }
+                        MotorcycleDetails(motorcycle: result.wrappedValue, confirmationMessage: $confirmationMessage, showingConfirmation: $showingConfirmation)
+                        
                         Section {
                             Text("Historia wypożyczeń")
                                 .fontWeight(.semibold)
@@ -72,19 +55,8 @@ struct DetailsView: View {
             case .utility:
                 Form {
                     ForEach($viewModel.utility, id: \.id) { result in
-                        UtilityForm(utility: result.wrappedValue, confirmationMessage: $confirmationMessage, showingConfirmation: $showingConfirmation)
+                        UtilityDetails(utility: result.wrappedValue, confirmationMessage: $confirmationMessage, showingConfirmation: $showingConfirmation)
                         
-                        Section {
-                            Button("Zapisz zmiany") {
-                                if viewModel.update(utility: result.wrappedValue) {
-                                    confirmationMessage = "Zaktualizowano dane"
-                                    showingConfirmation = true
-                                } else {
-                                    confirmationMessage = "Niepowodzenie"
-                                    showingConfirmation = true
-                                }
-                            }
-                        }
                         Section {
                             Text("Historia wypożyczeń")
                                 .fontWeight(.semibold)
@@ -97,19 +69,7 @@ struct DetailsView: View {
             case .client:
                 Form {
                     ForEach($viewModel.client, id: \.id) { result in
-                        ClientForm(client: result.wrappedValue, confirmationMessage: $confirmationMessage, showingConfirmation: $showingConfirmation)
-                        
-                        Section {
-                            Button("Zapisz zmiany") {
-                                if viewModel.update(client: result.wrappedValue) {
-                                    confirmationMessage = "Zaktualizowano dane"
-                                    showingConfirmation = true
-                                } else {
-                                    confirmationMessage = "Niepowodzenie"
-                                    showingConfirmation = true
-                                }
-                            }
-                        }
+                        ClientDetails(client: result.wrappedValue, confirmationMessage: $confirmationMessage, showingConfirmation: $showingConfirmation)
                         
                         Section {
                             Text("Historia wypożyczeń")

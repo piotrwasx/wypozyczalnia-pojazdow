@@ -1,5 +1,5 @@
 //
-//  ClientForm.swift
+//  ClientDetails.swift
 //  wypozyczalnia-pojazdow
 //
 //  Created by Piotr Waś on 31/01/2023.
@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct ClientForm: View {
+/// Detailed view of a specific ''Client''
+struct ClientDetails: View {
     
     @State var client: Client
     @Binding var confirmationMessage: String
@@ -32,6 +33,17 @@ struct ClientForm: View {
                 TextField("numer telefonu:", text: $client.client_phone_nr)
                 TextField("data wydania prawa jazdy:", text: $client.client_driving_license_since)
             }
+            Section {
+                Button("Zapisz zmiany") {
+                    if viewModel.update(client: client) {
+                        confirmationMessage = "Zaktualizowano dane"
+                        showingConfirmation = true
+                    } else {
+                        confirmationMessage = "Niepowodzenie"
+                        showingConfirmation = true
+                    }
+                }
+            }
         }.onAppear() {
             guard client.client_driving_license_since != "" else { return }
             client.client_driving_license_since = client.client_driving_license_since.formatDateTime()
@@ -39,9 +51,9 @@ struct ClientForm: View {
     }
 }
 
-struct ClientForm_Previews: PreviewProvider {
+struct ClientDetails_Previews: PreviewProvider {
     static var previews: some View {
-        ClientForm(client: Client(), confirmationMessage: .constant(""), showingConfirmation: .constant(false))
+        ClientDetails(client: Client(), confirmationMessage: .constant(""), showingConfirmation: .constant(false))
     }
 }
 

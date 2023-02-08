@@ -7,12 +7,14 @@
 
 import Foundation
 
+/// A view model of ''RentedListView''
 final class RentedListViewModel: ObservableObject {
     
     @Published var rentedCarRows: [DataListViewRow] = []
     @Published var rentedUtilityRows: [DataListViewRow] = []
     @Published var rentedMotorcycleRows: [DataListViewRow] = []
     
+    /// Fetch the data of currently rented vehicles from API
     func loadData() {
         self.rentedCarRows = []
         self.rentedUtilityRows = []

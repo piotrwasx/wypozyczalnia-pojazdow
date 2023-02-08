@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// View of currently rented behicles
 struct RentedListView: View {
     
     @ObservedObject var viewModel = RentedListViewModel()

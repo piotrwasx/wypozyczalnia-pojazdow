@@ -7,20 +7,24 @@
 
 import Foundation
 
+/// A view model of ''ListView''
 final class ListViewModel: ObservableObject {
     
-    var dataType: DataTypes
+    /// Enumerated data types
+    var dataType: DataType
     
+    /// a row that will be presented in ''ListView''
     @Published var dataRows: [DataListViewRow] = []
     
     @Published var rentedCarRows: [DataListViewRow] = []
     @Published var rentedUtilityRows: [DataListViewRow] = []
     @Published var rentedMotorcycleRows: [DataListViewRow] = []
     
-    init(dataType: DataTypes) {
+    init(dataType: DataType) {
         self.dataType = dataType
     }
     
+    /// Fetch the data for a ''dataType'' provided as a argument of ''ListViewModel''
     func loadData() {
         switch dataType {
         case .car:
@@ -79,7 +83,12 @@ final class ListViewModel: ObservableObject {
         }
     }
     
-    func deleteData(id: Int, dataType: DataTypes) async -> String {
+    /// Deletes the data of a specific id and datatype
+    /// - Parameters:
+    ///   - id: ID of the record to delete
+    ///   - dataType: type of data to delete
+    /// - Returns: returns a status message
+    func deleteData(id: Int, dataType: DataType) async -> String {
         switch dataType {
         case .client:
             return await NetworkController.changeAvailability(url: "http://127.0.0.1:5000/api/clients/\(id)")
