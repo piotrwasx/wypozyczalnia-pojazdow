@@ -35,7 +35,7 @@ final class NewRentFormModel: ObservableObject {
             }}
     }
     
-    /// A function that fetch data of type ''CarTitle'' from API
+    /// A function that fetch Titles of specific data type from API
     /// - Parameter vehicleType: enumerated type of vehicle to fetch its Titles from API
     func fetchVehicleTitles(vehicleType: VehicleType) {
         switch vehicleType {

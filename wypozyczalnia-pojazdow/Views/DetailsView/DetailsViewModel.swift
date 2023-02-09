@@ -29,7 +29,7 @@ final class DetailsViewModel: ObservableObject {
     /// An array of urls to fetch data of specific type/
     var urls = ["clients": "http://127.0.0.1:5000/api/clients/", "motorcycles": "http://127.0.0.1:5000/api/motorcycles/", "cars": "http://127.0.0.1:5000/api/cars/", "utilities": "http://127.0.0.1:5000/api/utilities/"]
     
-    /// This function fetch detaild data of specific item by its ID from API
+    /// This function fetch detailed data of specific item by its ID from API
     /// - Parameters:
     ///   - id: id of specific item to load data
     ///   - dataType: type of data to fetch from API
