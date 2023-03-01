@@ -19,6 +19,7 @@ struct CarDetails: View {
     var body: some View {
         List {
             Section {
+                    Text("id pojazdu: \($car.wrappedValue.id)")
                     TextField("marka:", text: $car.car_brand)
                     TextField("model:", text: $car.car_model)
                     TextField("rodzaj paliwa:", text: $car.car_motor)
@@ -29,25 +30,22 @@ struct CarDetails: View {
                 }
             
             Section {
-                TextField("przebieg [km]:", value: $car.car_mileage_km, formatter: NumberFormatter())
+                HStack {
+                    Text("przebig [km]:")
+                    TextField("", value: $car.car_mileage_km, formatter: NumberFormatter())
+                }
+                HStack {
+                    Text("rok produkcji:")
+                    TextField("", value: $car.car_year, formatter: NumberFormatter())
+                }
+                HStack {
+                    Text("cena:")
+                    TextField("", value: $car.car_rent_price_pln, formatter: NumberFormatter())
+                }
             } header: {
-                Text("przebieg")
+                Text("dane numeryczne")
             }
-            Section {
-                TextField("rok produkcji:", value: $car.car_year, formatter: NumberFormatter())
-            } header: {
-                Text("rok produkcji")
-            }
-            Section {
-                TextField("cena:", value: $car.car_rent_price_pln, formatter: NumberFormatter())
-            } header: {
-                Text("cena")
-            }
-            Section {
-                Text("\($car.wrappedValue.id)")
-            } header: {
-                Text("id pojazdu")
-            }
+            .keyboardType(.decimalPad)
             Section {
                 Button("Zapisz zmiany") {
                     if viewModel.update(car: car) {
@@ -57,6 +55,7 @@ struct CarDetails: View {
                         confirmationMessage = "Niepowodzenie"
                         showingConfirmation = true
                     }
+                    hideKeyboard()
                 }
             }
         }

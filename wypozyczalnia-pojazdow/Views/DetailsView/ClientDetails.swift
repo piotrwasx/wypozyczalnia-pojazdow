@@ -26,26 +26,51 @@ struct ClientDetails: View {
             }
             Section{
                 Text("id klienta: \($client.wrappedValue.id)")
-                TextField("e-mail", text: $client.client_email ?? "")
-                TextField("adres:", text: $client.client_address)
-                TextField("adres:", text: $client.client_street_nr)
-                TextField("miasto:", text: $client.client_city)
-                TextField("numer telefonu:", text: $client.client_phone_nr)
-                TextField("data wydania prawa jazdy:", text: $client.client_driving_license_since)
+                HStack {
+                    Text("e-mail:")
+                        .fontWeight(.semibold)
+                    TextField("", text: $client.client_email ?? "")
+                }
+                HStack {
+                    Text("adres:")
+                        .fontWeight(.semibold)
+                    TextField("", text: $client.client_address)
+                }
+                HStack {
+                    Text("numer domu:")
+                        .fontWeight(.semibold)
+                    TextField("", text: $client.client_street_nr)
+                }
+                HStack {
+                    Text("miasto:")
+                        .fontWeight(.semibold)
+                    TextField("", text: $client.client_city)
+                }
+                HStack {
+                    Text("numer telefonu:")
+                        .fontWeight(.semibold)
+                    TextField("", text: $client.client_phone_nr)
+                }
+                HStack {
+                    Text("data wydania prawa jazdy:")
+                        .fontWeight(.semibold)
+                    TextField("", text: $client.client_driving_license_since)
+                }
             }
             Section {
                 Button("Zapisz zmiany") {
                     if viewModel.update(client: client) {
                         confirmationMessage = "Zaktualizowano dane"
-                        showingConfirmation = true
                     } else {
                         confirmationMessage = "Niepowodzenie"
-                        showingConfirmation = true
                     }
+                    showingConfirmation = true
+                    hideKeyboard()
                 }
             }
         }.onAppear() {
-            guard client.client_driving_license_since != "" else { return }
+            guard client.client_driving_license_since != "" else { return
+            }
             client.client_driving_license_since = client.client_driving_license_since.formatDateTime()
         }
     }

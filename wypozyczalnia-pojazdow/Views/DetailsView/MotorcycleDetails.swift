@@ -19,6 +19,7 @@ struct MotorcycleDetails: View {
     var body: some View {
         List {
             Section {
+                Text("id pojazdu: \($motorcycle.wrappedValue.id)")
                 TextField("marka:", text: $motorcycle.motorcycle_brand)
                 TextField("model:", text: $motorcycle.motorcycle_model)
                 TextField("rodzaj paliwa:", text: $motorcycle.motorcycle_motor)
@@ -27,26 +28,22 @@ struct MotorcycleDetails: View {
                 Text("dane (kliknij, aby edytować)")
             }
             Section {
-                TextField("przebieg:", value: $motorcycle.motorcycle_mileage_km, formatter: NumberFormatter())
+                HStack {
+                    Text("przebieg:")
+                    TextField("", value: $motorcycle.motorcycle_mileage_km, formatter: NumberFormatter())
+                }
+                HStack {
+                    Text("rok produkcji:")
+                    TextField("rok produkcji:", value: $motorcycle.motorcycle_year, formatter: NumberFormatter())
+                }
+                HStack {
+                    Text("cena:")
+                    TextField("cena:", value: $motorcycle.motorcycle_rent_price_pln, formatter: NumberFormatter())
+                }
             } header: {
-                Text("przebieg")
-            }
-            Section {
-                TextField("rok produkcji:", value: $motorcycle.motorcycle_year, formatter: NumberFormatter())
-            } header: {
-                Text("rok produkcji")
-            }
-            Section {
-                TextField("cena:", value: $motorcycle.motorcycle_rent_price_pln, formatter: NumberFormatter())
-            } header: {
-                Text("cena")
+                Text("dane numeryczne")
             }
             
-            Section {
-                Text("id: \($motorcycle.wrappedValue.id)")
-            } header: {
-                Text("id pojazdu")
-            }
             Section {
                 Button("Zapisz zmiany") {
                     if viewModel.update(motorcycle: motorcycle) {
@@ -56,6 +53,7 @@ struct MotorcycleDetails: View {
                         confirmationMessage = "Niepowodzenie"
                         showingConfirmation = true
                     }
+                    hideKeyboard()
                 }
             }
         }
